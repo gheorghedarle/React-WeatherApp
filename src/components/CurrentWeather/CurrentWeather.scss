@@ -1,0 +1,31 @@
+.current-weather {
+  display: flex;
+  width: 50vw;
+  .current-weather-image {
+    margin: 20px 0;
+    width: 120px;
+  }
+  .current-weather-temp {
+    color: white;
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: 72px;
+    font-weight: 900;
+    margin-bottom: -15px;
+  }
+  .current-weather-feelslike {
+    color: #bdbdbd;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    text-align: end;
+  }
+  .current-weather-description {
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    text-align: end;
+  }
+}
+.current-weather-details {
+  display: flex;
+  width: 50vw;
+}
