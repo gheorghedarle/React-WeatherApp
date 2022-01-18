@@ -1,31 +1,46 @@
-.current-weather {
+.container {
   display: flex;
-  width: 50vw;
-  .current-weather-image {
-    margin: 20px 0;
-    width: 120px;
+  margin: 10px 0;
+  .current-weather {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 0 10px 0 0;
+    .image {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      .icon {
+        width: 120px;
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      width: 50%;
+      .temp {
+        color: white;
+        font-family: "Frank Ruhl Libre", serif;
+        font-size: 72px;
+        font-weight: 900;
+        margin-bottom: -15px;
+      }
+      .feelslike {
+        color: #bdbdbd;
+        font-family: "Barlow", sans-serif;
+        font-size: 14px;
+      }
+      .description {
+        color: white;
+        font-family: "Barlow", sans-serif;
+        font-size: 14px;
+      }
+    }
   }
-  .current-weather-temp {
-    color: white;
-    font-family: "Frank Ruhl Libre", serif;
-    font-size: 72px;
-    font-weight: 900;
-    margin-bottom: -15px;
+  .current-weather-details {
+    display: flex;
+    width: 50%;
   }
-  .current-weather-feelslike {
-    color: #bdbdbd;
-    font-family: "Barlow", sans-serif;
-    font-size: 14px;
-    text-align: end;
-  }
-  .current-weather-description {
-    color: white;
-    font-family: "Barlow", sans-serif;
-    font-size: 14px;
-    text-align: end;
-  }
-}
-.current-weather-details {
-  display: flex;
-  width: 50vw;
 }
