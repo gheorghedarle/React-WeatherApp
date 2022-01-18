@@ -1,28 +1,44 @@
 @import "../../styles/color-themes";
 
-.city {
-  @include theme() {
-    color: get-color("text");
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .location {
+    display: flex;
+    flex-direction: column;
+    .city {
+      @include theme() {
+        color: get-color("text");
+      }
+      font-family: "Frank Ruhl Libre", serif;
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: -5px;
+    }
+    .country {
+      @include theme() {
+        color: get-color("text");
+      }
+      font-family: "Barlow", sans-serif;
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+    .date {
+      @include theme() {
+        color: get-color("text-secondary");
+      }
+      font-family: "Barlow", sans-serif;
+      font-size: 14px;
+    }
   }
-  font-family: "Frank Ruhl Libre", serif;
-  font-size: 36px;
-  font-weight: 900;
-  margin-bottom: -5px;
-}
-
-.country {
-  @include theme() {
-    color: get-color("text");
+  .settings {
+    .button-theme {
+      @include theme() {
+        color: get-color("text");
+      }
+      font-size: 24px;
+      cursor: pointer;
+    }
   }
-  font-family: "Barlow", sans-serif;
-  font-size: 18px;
-  margin-bottom: 2px;
-}
-
-.date {
-  @include theme() {
-    color: get-color("text-secondary");
-  }
-  font-family: "Barlow", sans-serif;
-  font-size: 14px;
 }
