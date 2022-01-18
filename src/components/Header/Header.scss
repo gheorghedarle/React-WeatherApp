@@ -1,5 +1,9 @@
+@import "../../styles/color-themes";
+
 .city {
-  color: white;
+  @include theme() {
+    color: get-color("text");
+  }
   font-family: "Frank Ruhl Libre", serif;
   font-size: 36px;
   font-weight: 900;
@@ -7,14 +11,18 @@
 }
 
 .country {
-  color: white;
+  @include theme() {
+    color: get-color("text");
+  }
   font-family: "Barlow", sans-serif;
   font-size: 18px;
   margin-bottom: 2px;
 }
 
 .date {
-  color: #bdbdbd;
+  @include theme() {
+    color: get-color("text-secondary");
+  }
   font-family: "Barlow", sans-serif;
   font-size: 14px;
 }

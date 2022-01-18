@@ -1,0 +1,36 @@
+//themes
+$themes: (
+  light: (
+    background: #fdfdfd,
+    text: #212121,
+    text-secondary: #757575,
+  ),
+  dark: (
+    background: #001f3d,
+    text: #f5f5f5,
+    text-secondary: #bdbdbd,
+  ),
+);
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    .#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function get-color($key) {
+  @return map-get($theme-map, $key);
+}

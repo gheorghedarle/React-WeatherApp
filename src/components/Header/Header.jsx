@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 
-export const Header = () => {
+export const Header = ({ theme, setTheme }) => {
   const getCurrentDate = () => {
     var date = new Date().toLocaleString("en", {
       weekday: "long",
@@ -24,9 +24,21 @@ export const Header = () => {
 
   return (
     <>
-      <div className="city">Timișoara</div>
-      <div className="country">Romania</div>
-      <div className="date">{getCurrentDate()}</div>
+      <div>
+        <div className="city">Timișoara</div>
+        <div className="country">Romania</div>
+        <div className="date">{getCurrentDate()}</div>
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            if (theme === "dark") setTheme("light");
+            else setTheme("dark");
+          }}
+        >
+          {theme}
+        </button>
+      </div>
     </>
   );
 };

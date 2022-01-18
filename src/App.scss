@@ -1,7 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&ffamily=Frank+Ruhl+Libre&display=swap");
+@import "./styles/color-themes";
 
-.app {
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-container {
   height: 100vh;
   width: 100vw;
-  background-color: #001f3d;
+  transition: background-color 0.5s ease;
+  transform: 500ms;
+  @include theme() {
+    background-color: get-color("background");
+  }
 }
