@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Header } from "./components/Header/Header";
-import { CurrentWeather } from "./components/CurrentWeather/CurrentWeather";
 import "./App.scss";
+import { Container } from "./components/Container/Container";
 
 export const App = () => {
   const [theme, setTheme] = useState("dark");
@@ -9,8 +8,7 @@ export const App = () => {
   return (
     <main className={theme}>
       <div className="main-container">
-        <Header theme={theme} setTheme={setTheme}></Header>
-        <CurrentWeather theme={theme}></CurrentWeather>
+        <Container theme={theme} setTheme={setTheme}></Container>
       </div>
     </main>
   );

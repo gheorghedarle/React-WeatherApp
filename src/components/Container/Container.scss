@@ -1,0 +1,12 @@
+.container {
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  .grid-container {
+    grid-template-areas:
+      "header header header header"
+      "cw cw cw-details cw-details";
+  }
+}

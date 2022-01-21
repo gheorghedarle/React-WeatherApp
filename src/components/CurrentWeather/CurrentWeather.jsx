@@ -27,3 +27,5 @@ export const CurrentWeather = ({ theme }) => {
     </div>
   );
 };
+
+export default CurrentWeather;
