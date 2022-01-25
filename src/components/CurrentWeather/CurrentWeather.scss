@@ -1,5 +1,6 @@
 @import "../../styles/color-themes";
 @import "../../styles/media-queries";
+@import "../../styles/font-size";
 
 .current-weather {
   @include mobile-portrait {
@@ -37,7 +38,7 @@
         color: get-color("text");
       }
       font-family: "Frank Ruhl Libre", serif;
-      font-size: 72px;
+      font-size: $headline0-font-size;
       font-weight: 900;
       margin-bottom: -15px;
       span {
@@ -45,7 +46,7 @@
           color: get-color("text");
         }
         font-family: "Barlow", sans-serif;
-        font-size: 24px;
+        font-size: $headline4-font-size;
       }
     }
     .feelslike {
@@ -53,12 +54,12 @@
         color: get-color("text-secondary");
       }
       font-family: "Barlow", sans-serif;
-      font-size: 14px;
+      font-size: $body2-font-size;
       span {
         @include theme() {
           color: get-color("text");
         }
-        font-size: 14px;
+        font-size: $body2-font-size;
       }
     }
     .description {
@@ -66,7 +67,7 @@
         color: get-color("text");
       }
       font-family: "Barlow", sans-serif;
-      font-size: 14px;
+      font-size: $body2-font-size;
     }
   }
 }
@@ -90,7 +91,7 @@
   }
   @include theme() {
     background-color: get-color("background-card");
-    box-shadow: 0px 2px 5px 0px get-color("color-shadow");
+    box-shadow: 0px 5px 10px get-color("color-shadow");
   }
   height: 100%;
   border-radius: 20px;
