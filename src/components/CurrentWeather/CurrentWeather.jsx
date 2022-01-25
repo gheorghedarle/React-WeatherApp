@@ -4,7 +4,7 @@ import "./CurrentWeather.scss";
 export const CurrentWeather = ({ theme }) => {
   const weatherCode = theme === "dark" ? "02d_n" : "02d";
   return (
-    <div className="current-weather-container">
+    <>
       <div className="current-weather">
         <div className="image">
           <img
@@ -24,7 +24,7 @@ export const CurrentWeather = ({ theme }) => {
         </div>
       </div>
       <div className="current-weather-details"></div>
-    </div>
+    </>
   );
 };
 

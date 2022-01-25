@@ -1,62 +1,59 @@
 @import "../../styles/color-themes";
 
-.header-container {
-  grid-area: "header";
+.location {
+  grid-column: span 3;
+  grid-row: span 2;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  .location {
-    display: flex;
-    flex-direction: column;
-    .city {
-      @include theme() {
-        color: get-color("text");
-      }
-      font-family: "Frank Ruhl Libre", serif;
-      font-size: 36px;
-      font-weight: 900;
-      margin-bottom: -5px;
+  flex-direction: column;
+  .city {
+    @include theme() {
+      color: get-color("text");
     }
-    .country {
-      @include theme() {
-        color: get-color("text");
-      }
-      font-family: "Barlow", sans-serif;
-      font-size: 18px;
-      margin-bottom: 2px;
-    }
-    .date {
-      @include theme() {
-        color: get-color("text-secondary");
-      }
-      font-family: "Barlow", sans-serif;
-      font-size: 14px;
-    }
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: -5px;
   }
-  .settings {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 100%;
-    justify-content: space-between;
-    .button-theme {
-      @include theme() {
-        color: get-color("text");
-      }
-      font-size: 24px;
-      cursor: pointer;
+  .country {
+    @include theme() {
+      color: get-color("text");
     }
-    .input {
-      background-color: transparent;
-      border: 0;
-      text-align: end;
-      font-size: 14px;
-      font-family: "Barlow", sans-serif;
-      @include theme() {
-        color: get-color("text");
-        border-bottom: 1px solid get-color("text");
-      }
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  .date {
+    @include theme() {
+      color: get-color("text-secondary");
+    }
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+  }
+}
+.settings {
+  display: flex;
+  justify-content: flex-end;
+  .button-theme {
+    @include theme() {
+      color: get-color("text");
+    }
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+.search {
+  display: flex;
+  justify-content: flex-end;
+  .input {
+    background-color: transparent;
+    border: 0;
+    text-align: end;
+    font-size: 14px;
+    font-family: "Barlow", sans-serif;
+    width: 100%;
+    @include theme() {
+      color: get-color("text");
+      border-bottom: 1px solid get-color("text");
     }
   }
 }

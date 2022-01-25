@@ -1,0 +1,45 @@
+@mixin portrait {
+  @media screen and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin mobile-small-portrait {
+  @media screen and (min-width: 319px) {
+    @content;
+  }
+}
+@mixin mobile-small-landscape {
+  @media screen and (min-width: 480px) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin mobile-portrait {
+  @media screen and (min-width: 479px) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin mobile-landscape {
+  @media screen and (min-width: 600px) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin tablet-portrait {
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin tablet-landscape {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

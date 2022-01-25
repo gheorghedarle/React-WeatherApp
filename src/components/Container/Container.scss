@@ -1,12 +1,42 @@
+@import "../../styles/media-queries";
+
 .container {
-  width: 80vw;
-  height: 80vh;
   position: absolute;
-  top: 10vh;
-  left: 10vw;
+  @include mobile-portrait {
+    width: 95vw;
+    height: 95vh;
+    top: 2.5vh;
+    left: 2.5vw;
+  }
+  @include mobile-landscape {
+    width: 95vw;
+    height: 95vh;
+    top: 2.5vh;
+    left: 2.5vw;
+  }
+  @include tablet-portrait {
+    width: 90vw;
+    height: 90vh;
+    top: 5vh;
+    left: 5vw;
+  }
+  @include tablet-landscape {
+    width: 90vw;
+    height: 90vh;
+    top: 5vh;
+    left: 5vw;
+  }
+  @include desktop {
+    width: 80vw;
+    height: 80vh;
+    top: 10vh;
+    left: 10vw;
+  }
   .grid-container {
-    grid-template-areas:
-      "header header header header"
-      "cw cw cw-details cw-details";
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 15px;
+    row-gap: 15px;
   }
 }

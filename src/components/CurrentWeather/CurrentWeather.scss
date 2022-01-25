@@ -1,74 +1,97 @@
 @import "../../styles/color-themes";
+@import "../../styles/media-queries";
 
-.current-weather-container {
+.current-weather {
+  @include mobile-portrait {
+    grid-column: span 4;
+  }
+  @include mobile-landscape {
+    grid-column: span 2;
+  }
+  @include tablet-portrait {
+    grid-column: span 4;
+  }
+  @include tablet-landscape {
+    grid-column: span 2;
+  }
+  @include desktop {
+    grid-column: span 2;
+  }
   display: flex;
-  margin: 30px 0;
-  .current-weather {
+  justify-content: space-between;
+  .image {
     display: flex;
-    grid-area: "cw";
-    justify-content: space-between;
-    width: 100%;
-    .image {
-      display: flex;
-      justify-content: center;
-      width: 50%;
-      .icon {
-        width: 120px;
-      }
+    justify-content: center;
+    width: 50%;
+    .icon {
+      width: 120px;
     }
-    .details {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: center;
-      width: 50%;
-      .temp {
-        @include theme() {
-          color: get-color("text");
-        }
-        font-family: "Frank Ruhl Libre", serif;
-        font-size: 72px;
-        font-weight: 900;
-        margin-bottom: -15px;
-        span {
-          @include theme() {
-            color: get-color("text");
-          }
-          font-family: "Barlow", sans-serif;
-          font-size: 24px;
-        }
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    .temp {
+      @include theme() {
+        color: get-color("text");
       }
-      .feelslike {
-        @include theme() {
-          color: get-color("text-secondary");
-        }
-        font-family: "Barlow", sans-serif;
-        font-size: 14px;
-        span {
-          @include theme() {
-            color: get-color("text");
-          }
-          font-size: 14px;
-        }
-      }
-      .description {
+      font-family: "Frank Ruhl Libre", serif;
+      font-size: 72px;
+      font-weight: 900;
+      margin-bottom: -15px;
+      span {
         @include theme() {
           color: get-color("text");
         }
         font-family: "Barlow", sans-serif;
+        font-size: 24px;
+      }
+    }
+    .feelslike {
+      @include theme() {
+        color: get-color("text-secondary");
+      }
+      font-family: "Barlow", sans-serif;
+      font-size: 14px;
+      span {
+        @include theme() {
+          color: get-color("text");
+        }
         font-size: 14px;
       }
     }
-  }
-  .current-weather-details {
-    display: flex;
-    grid-area: "cw-details";
-    width: 100%;
-    @include theme() {
-      background-color: get-color("background-card");
-      box-shadow: 0px 2px 5px 0px get-color("color-shadow");
+    .description {
+      @include theme() {
+        color: get-color("text");
+      }
+      font-family: "Barlow", sans-serif;
+      font-size: 14px;
     }
-    border-radius: 20px;
-    margin: 0 20px;
   }
+}
+.current-weather-details {
+  @include mobile-portrait {
+    grid-column: span 4;
+    grid-row: 3;
+  }
+  @include mobile-landscape {
+    grid-column: span 2;
+  }
+  @include tablet-portrait {
+    grid-column: span 4;
+    grid-row: 3;
+  }
+  @include tablet-landscape {
+    grid-column: span 2;
+  }
+  @include desktop {
+    grid-column: span 2;
+  }
+  @include theme() {
+    background-color: get-color("background-card");
+    box-shadow: 0px 2px 5px 0px get-color("color-shadow");
+  }
+  height: 100%;
+  border-radius: 20px;
 }
