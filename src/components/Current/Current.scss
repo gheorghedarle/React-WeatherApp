@@ -2,7 +2,7 @@
 @import "../../styles/media-queries";
 @import "../../styles/font-size";
 
-.current-weather {
+.current {
   @include mobile-portrait {
     grid-column: span 4;
   }
@@ -71,7 +71,7 @@
     }
   }
 }
-.current-weather-details {
+.current-details {
   @include mobile-portrait {
     grid-column: span 4;
     grid-row: 3;

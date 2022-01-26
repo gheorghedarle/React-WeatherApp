@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Header/Header";
-import CurrentWeather from "../CurrentWeather/CurrentWeather";
+import Current from "../Current/Current";
+import Hourly from "../Hourly/Hourly";
 import "./Container.scss";
 
 export const Container = ({ theme, setTheme }) => {
@@ -8,7 +9,8 @@ export const Container = ({ theme, setTheme }) => {
     <div className="container">
       <div className="grid-container">
         <Header theme={theme} setTheme={setTheme}></Header>
-        <CurrentWeather theme={theme}></CurrentWeather>
+        <Current theme={theme}></Current>
+        <Hourly theme={theme}></Hourly>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
+import React from "react";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import "./Header.scss";
 
 export const Header = ({ theme, setTheme }) => {
@@ -27,9 +27,9 @@ export const Header = ({ theme, setTheme }) => {
   return (
     <>
       <div className="location">
-        <div className="city">Timișoara</div>
-        <div className="country">Romania</div>
-        <div className="date">{getCurrentDate()}</div>
+        <label className="city">Timișoara</label>
+        <label className="country">Romania</label>
+        <label className="date">{getCurrentDate()}</label>
       </div>
       <div className="settings">
         <div

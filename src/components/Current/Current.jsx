@@ -1,11 +1,11 @@
 import React from "react";
-import "./CurrentWeather.scss";
+import "./Current.scss";
 
-export const CurrentWeather = ({ theme }) => {
+export const Current = ({ theme }) => {
   const weatherCode = theme === "dark" ? "02d_n" : "02d";
   return (
     <>
-      <div className="current-weather">
+      <div className="current">
         <div className="image">
           <img
             src={require(`../../resources/icon_${weatherCode}.png`)}
@@ -23,9 +23,9 @@ export const CurrentWeather = ({ theme }) => {
           <div className="description">sunny</div>
         </div>
       </div>
-      <div className="current-weather-details"></div>
+      <div className="current-details"></div>
     </>
   );
 };
 
-export default CurrentWeather;
+export default Current;

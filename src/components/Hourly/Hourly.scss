@@ -1,0 +1,31 @@
+@import "../../styles/color-themes";
+@import "../../styles/font-size";
+
+.hourly {
+  grid-column: span 4;
+  grid-row: 4;
+  display: flex;
+  flex-direction: column;
+  .title {
+    @include theme() {
+      color: get-color("text");
+    }
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: $headline4-font-size;
+    font-weight: 700;
+    margin-bottom: -5px;
+  }
+  .hourly-items-container {
+    display: flex;
+    .hourly-item {
+      @include theme() {
+        background-color: get-color("background-card");
+        box-shadow: 0px 5px 10px get-color("color-shadow");
+      }
+      height: 120px;
+      width: 100px;
+      margin: 10px 5px;
+      border-radius: 20px;
+    }
+  }
+}
