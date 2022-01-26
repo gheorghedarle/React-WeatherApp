@@ -16,15 +16,19 @@
     margin-bottom: -5px;
   }
   .hourly-items-container {
-    display: flex;
+    white-space: nowrap;
+    overflow-x: hidden;
+    cursor: grab;
     .hourly-item {
       @include theme() {
         background-color: get-color("background-card");
         box-shadow: 0px 5px 10px get-color("color-shadow");
       }
+      display: inline-block;
+
       height: 120px;
-      width: 100px;
-      margin: 10px 5px;
+      width: 90px;
+      margin: 15px 5px;
       border-radius: 20px;
     }
   }
