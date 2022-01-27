@@ -21,13 +21,13 @@
     .hourly-item {
       @include theme() {
         background-color: get-color("background-card");
-        box-shadow: 0px 10px 15px 0px get-color("color-shadow");
+        box-shadow: 0px 5px 10px 0px get-color("color-shadow");
       }
       display: inline-block;
       height: 120px;
       width: 90px;
       margin: 15px 5px;
-      border-radius: 20px;
+      border-radius: 15px;
     }
   }
 }
