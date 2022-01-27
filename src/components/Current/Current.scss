@@ -91,7 +91,7 @@
   }
   @include theme() {
     background-color: get-color("background-card");
-    box-shadow: 0px 5px 10px get-color("color-shadow");
+    box-shadow: 0px 10px 15px 0px get-color("color-shadow");
   }
   height: 100%;
   border-radius: 20px;
