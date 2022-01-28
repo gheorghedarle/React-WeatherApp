@@ -14,13 +14,13 @@ export const Current = ({ theme }) => {
           />
         </div>
         <div className="details">
-          <div className="temp">
+          <label className="temp">
             23°<span>C</span>
-          </div>
-          <div className="feelslike">
+          </label>
+          <label className="feelslike">
             Feels like: <span>27°</span>
-          </div>
-          <div className="description">sunny</div>
+          </label>
+          <label className="description">sunny</label>
         </div>
       </div>
       <div className="current-details"></div>

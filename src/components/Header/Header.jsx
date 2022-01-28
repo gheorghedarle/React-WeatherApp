@@ -5,17 +5,17 @@ import "./Header.scss";
 
 export const Header = ({ theme, setTheme }) => {
   const getCurrentDate = () => {
-    var date = new Date().toLocaleString("en", {
-      weekday: "long",
+    var date = new Date().toLocaleString("en-GB", {
       day: "2-digit",
+      weekday: "long",
       month: "long",
     });
 
-    var year = new Date().toLocaleString("en", {
+    var year = new Date().toLocaleString("en-GB", {
       year: "numeric",
     });
 
-    var hour = new Date().toLocaleString("en", {
+    var hour = new Date().toLocaleString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,

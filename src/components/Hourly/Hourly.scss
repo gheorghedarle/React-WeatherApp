@@ -18,14 +18,14 @@
   .hourly-items-container {
     white-space: nowrap;
     overflow-x: hidden;
-    .hourly-item {
+    .hourly-item-container {
       @include theme() {
         background-color: get-color("background-card");
         box-shadow: 0px 5px 10px 0px get-color("color-shadow");
       }
       display: inline-block;
       height: 120px;
-      width: 90px;
+      width: 80px;
       margin: 15px 5px;
       border-radius: 15px;
     }

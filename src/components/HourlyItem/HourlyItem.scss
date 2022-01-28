@@ -1,0 +1,18 @@
+@import "../../styles/color-themes";
+@import "../../styles/font-size";
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  @include theme() {
+    color: get-color("text-secondary");
+  }
+  font-family: "Barlow", sans-serif;
+  font-size: $body2-font-size;
+  .icon-small {
+    width: 60px;
+  }
+}
