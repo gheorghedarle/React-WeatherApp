@@ -2,33 +2,29 @@
 
 .container {
   position: absolute;
+  overflow: hidden;
   @include mobile-portrait {
     width: 95vw;
-    height: 95vh;
     top: 2.5vh;
     left: 2.5vw;
   }
   @include mobile-landscape {
     width: 95vw;
-    height: 95vh;
     top: 2.5vh;
     left: 2.5vw;
   }
   @include tablet-portrait {
     width: 90vw;
-    height: 90vh;
     top: 5vh;
     left: 5vw;
   }
   @include tablet-landscape {
     width: 90vw;
-    height: 90vh;
     top: 5vh;
     left: 5vw;
   }
   @include desktop {
     width: 80vw;
-    height: 80vh;
     top: 10vh;
     left: 10vw;
   }

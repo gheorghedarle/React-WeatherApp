@@ -19,13 +19,19 @@
     white-space: nowrap;
     overflow-x: hidden;
     .hourly-item-container {
+      &.active {
+        @include theme() {
+          background-color: get-color("background-card");
+          box-shadow: 0px 5px 10px 0px get-color("color-shadow");
+        }
+      }
       @include theme() {
-        background-color: get-color("background-card");
+        background-color: get-color("background-unselected-card");
         box-shadow: 0px 5px 10px 0px get-color("color-shadow");
       }
       display: inline-block;
       height: 120px;
-      width: 80px;
+      width: 75px;
       margin: 15px 5px;
       border-radius: 15px;
     }
