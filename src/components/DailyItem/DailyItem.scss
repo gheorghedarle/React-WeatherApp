@@ -13,6 +13,7 @@
   .day {
     flex: 1;
     margin-left: 15px;
+    font-weight: 600;
     @include theme() {
       color: get-color("text");
     }

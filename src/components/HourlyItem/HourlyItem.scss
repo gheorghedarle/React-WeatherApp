@@ -7,9 +7,6 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  @include theme() {
-    color: get-color("text-secondary");
-  }
   font-family: "Barlow", sans-serif;
   font-size: $body2-font-size;
   .icon-small {

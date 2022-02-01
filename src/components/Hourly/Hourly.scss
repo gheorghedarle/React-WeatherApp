@@ -18,22 +18,29 @@
   .hourly-items-container {
     white-space: nowrap;
     overflow-x: hidden;
+    cursor: pointer;
     .hourly-item-container {
       &.active {
         @include theme() {
           background-color: get-color("background-card");
+          color: get-color("text");
           box-shadow: 0px 5px 10px 0px get-color("color-shadow");
+          font-weight: 600;
         }
       }
       @include theme() {
         background-color: get-color("background-unselected-card");
-        box-shadow: 0px 5px 10px 0px get-color("color-shadow");
+        color: get-color("text-secondary");
+        box-shadow: 0;
+        font-weight: 400;
       }
       display: inline-block;
       height: 120px;
       width: 75px;
       margin: 15px 5px;
       border-radius: 15px;
+      transition: all 0.5s ease;
+      transform: 250ms;
     }
   }
 }
