@@ -1,10 +1,10 @@
 import React from "react";
 import "./DailyItem.scss";
 
-export const DailyItem = ({ theme }) => {
+export const DailyItem = ({ theme, onClick }) => {
   const weatherCode = theme === "dark" ? "04d_n" : "04d";
   return (
-    <div className="daily-item">
+    <div className="daily-item" onClick={onClick}>
       <img
         src={require(`../../resources/icon_${weatherCode}.png`)}
         className="icon-small"
