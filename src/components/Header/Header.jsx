@@ -6,7 +6,7 @@ import "./Header.scss";
 export const Header = ({ theme, setTheme }) => {
   const getCurrentDate = () => {
     var date = new Date().toLocaleString("en-GB", {
-      day: "2-digit",
+      day: "numeric",
       weekday: "long",
       month: "long",
     });
