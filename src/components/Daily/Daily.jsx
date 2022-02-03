@@ -46,11 +46,16 @@ export const Daily = ({ theme }) => {
               <div
                 className={
                   activeIndex === h.id
-                    ? "daily-item-details active"
-                    : "daily-item-details"
+                    ? "daily-item-header active"
+                    : "daily-item-header"
                 }
               >
-                Hidden gems
+                <div className="daily-item-details">
+                  <div className="daily-item-details-item">
+                    <label>Rain:</label>
+                    <label>0%</label>
+                  </div>
+                </div>
               </div>
             </>
           ))}

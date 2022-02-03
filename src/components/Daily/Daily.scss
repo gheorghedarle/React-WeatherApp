@@ -26,13 +26,26 @@
       margin: 5px;
       border-radius: 15px;
     }
-    .daily-item-details {
+    .daily-item-header {
       height: 0;
       transition: height 0.5s ease;
       transform: 250ms;
       overflow: hidden;
       &.active {
         height: 100px;
+      }
+    }
+    .daily-item-details {
+      display: flex;
+      @include theme() {
+        color: get-color("text");
+      }
+      font-family: "Barlow", sans-serif;
+      font-size: $body2-font-size;
+      .daily-item-details-item {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
       }
     }
   }
