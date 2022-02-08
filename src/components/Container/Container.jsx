@@ -7,7 +7,7 @@ import Daily from "../Daily/Daily";
 import "./Container.scss";
 
 export const Container = ({ theme, setTheme }) => {
-  const [] = useWeather(45.7634188, 21.2397304);
+  const [] = useWeather(45.7634188, 21.2397304, "metric");
 
   return (
     <div className="container">

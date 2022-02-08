@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
 
-export const useWeather = (lat, lon) => {
-  const baseUrl = "https://api.openweathermap.org/data/2.5";
+export const useWeather = (lat, lon, units) => {
+  const baseUrl = process.env.REACT_APP_OPENWEATHER_API_BASEURL;
+  const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
   const path = "onecall";
-  const units = "metric";
-  const apiKey = "";
   useEffect(() => {
     axios
       .get(
@@ -14,6 +13,6 @@ export const useWeather = (lat, lon) => {
       .then((response) => {
         console.log(response.data);
       });
-  }, [lat, lon]);
+  }, [lat, lon, units, baseUrl, apiKey]);
   return [];
 };
