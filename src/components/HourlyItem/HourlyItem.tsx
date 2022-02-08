@@ -1,7 +1,11 @@
 import React from "react";
 import "./HourlyItem.scss";
 
-export const HourlyItem = ({ theme }) => {
+type HourlyItemProps = {
+  theme: string;
+};
+
+export const HourlyItem = ({ theme }: HourlyItemProps) => {
   const weatherCode = theme === "dark" ? "03d_n" : "03d";
   return (
     <div className={"hourly-item"}>

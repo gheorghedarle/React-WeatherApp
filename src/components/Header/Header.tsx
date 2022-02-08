@@ -3,7 +3,12 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.scss";
 
-export const Header = ({ theme, setTheme }) => {
+type HeaderProps = {
+  theme: string;
+  setTheme: (theme: string) => void;
+};
+
+export const Header = ({ theme, setTheme }: HeaderProps) => {
   const getCurrentDate = () => {
     var date = new Date().toLocaleString("en-GB", {
       day: "numeric",

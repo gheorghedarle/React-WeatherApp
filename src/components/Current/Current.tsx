@@ -1,7 +1,11 @@
 import React from "react";
 import "./Current.scss";
 
-export const Current = ({ theme }) => {
+type CurrentProps = {
+  theme: string;
+};
+
+export const Current = ({ theme }: CurrentProps) => {
   const weatherCode = theme === "dark" ? "02d_n" : "02d";
   return (
     <>

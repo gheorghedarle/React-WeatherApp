@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import HourlyItem from "../HourlyItem/HourlyItem";
 import "./Hourly.scss";
 
-export const Hourly = ({ theme }) => {
+type HourlyProps = {
+  theme: string;
+};
+
+export const Hourly = ({ theme }: HourlyProps) => {
   const hourlyWeather = [
     {
       id: 1,
@@ -39,7 +43,7 @@ export const Hourly = ({ theme }) => {
     hourlyWeather ? hourlyWeather[0].id : 0
   );
 
-  const clickHandler = (h) => {
+  const clickHandler = (h: any) => {
     setActiveIndex(h.id);
   };
 

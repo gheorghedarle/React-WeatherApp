@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 
-export const useWeather = (lat, lon, units) => {
+export const useWeather = (lat: number, lon: number, units: string) => {
   const baseUrl = process.env.REACT_APP_OPENWEATHER_API_BASEURL;
   const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
   const path = "onecall";

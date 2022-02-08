@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import DailyItem from "../DailyItem/DailyItem";
 import "./Daily.scss";
 
-export const Daily = ({ theme }) => {
+type DailyProps = {
+  theme: string;
+};
+
+export const Daily = ({ theme }: DailyProps) => {
   const dailyWeather = [
     {
       id: 1,
@@ -25,7 +29,7 @@ export const Daily = ({ theme }) => {
   ];
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const clickHandler = (h) => {
+  const clickHandler = (h: any) => {
     if (h.id === activeIndex) {
       setActiveIndex(null);
     } else {

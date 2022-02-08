@@ -6,7 +6,12 @@ import Hourly from "../Hourly/Hourly";
 import Daily from "../Daily/Daily";
 import "./Container.scss";
 
-export const Container = ({ theme, setTheme }) => {
+type ContainerProps = {
+  theme: string;
+  setTheme: (theme: string) => void;
+};
+
+export const Container = ({ theme, setTheme }: ContainerProps) => {
   const [] = useWeather(45.7634188, 21.2397304, "metric");
 
   return (
