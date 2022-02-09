@@ -1,14 +1,18 @@
 import React from "react";
+import { CurrentWeatherModel } from "../../models";
 import "./CurrentWeather.scss";
 
 type CurrentWeatherProps = {
   theme: string;
   unit: string;
-  data: any;
+  data: CurrentWeatherModel;
 };
 
 export const CurrentWeather = ({ theme, unit, data }: CurrentWeatherProps) => {
-  const weatherCode = theme === "dark" ? "02d_n" : "02d";
+  const weatherCode =
+    data && theme === "dark"
+      ? `${data.weather.icon}_n`
+      : `${data.weather.icon}`;
   const unitSymbol = unit === "metric" ? "C" : "F";
   return (
     <>
@@ -25,9 +29,9 @@ export const CurrentWeather = ({ theme, unit, data }: CurrentWeatherProps) => {
             {Math.round(data.temp)}°<span>{unitSymbol}</span>
           </label>
           <label className="feelslike">
-            Feels like: <span>27°</span>
+            Feels like: <span>{Math.round(data.feels_like)}°</span>
           </label>
-          <label className="description">sunny</label>
+          <label className="description">{data.weather.description}</label>
         </div>
       </div>
     </>

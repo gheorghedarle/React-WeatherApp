@@ -6,5 +6,7 @@ type CurrentWeatherProps = {
 };
 
 export const CurrentWeatherDetails = ({ data }: CurrentWeatherProps) => {
-  return <div className="current-details"></div>;
+  return <div className="current-weather-details"></div>;
 };
+
+export default CurrentWeatherDetails;

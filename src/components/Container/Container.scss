@@ -1,3 +1,4 @@
+@import "../../styles/color-themes";
 @import "../../styles/media-queries";
 
 .container {
@@ -27,5 +28,10 @@
     grid-template-rows: repeat(5, auto);
     column-gap: 15px;
     row-gap: 15px;
+  }
+  .loading {
+    @include theme() {
+      color: get-color("text");
+    }
   }
 }
