@@ -1,0 +1,29 @@
+@import "../../styles/color-themes";
+@import "../../styles/media-queries";
+@import "../../styles/font-size";
+
+.current-weather-details {
+  @include mobile-portrait {
+    grid-column: span 4;
+    grid-row: 3;
+  }
+  @include mobile-landscape {
+    grid-column: span 2;
+  }
+  @include tablet-portrait {
+    grid-column: span 4;
+    grid-row: 3;
+  }
+  @include tablet-landscape {
+    grid-column: span 2;
+  }
+  @include desktop {
+    grid-column: span 2;
+  }
+  @include theme() {
+    background-color: get-color("background-card");
+    box-shadow: 0px 5px 10px 0px get-color("color-shadow");
+  }
+  height: 100%;
+  border-radius: 15px;
+}

@@ -1,15 +1,18 @@
 import React from "react";
-import "./Current.scss";
+import "./CurrentWeather.scss";
 
-type CurrentProps = {
+type CurrentWeatherProps = {
   theme: string;
+  unit: string;
+  data: any;
 };
 
-export const Current = ({ theme }: CurrentProps) => {
+export const CurrentWeather = ({ theme, unit, data }: CurrentWeatherProps) => {
   const weatherCode = theme === "dark" ? "02d_n" : "02d";
+  const unitSymbol = unit === "metric" ? "C" : "F";
   return (
     <>
-      <div className="current">
+      <div className="current-weather">
         <div className="image">
           <img
             src={require(`../../resources/icon_${weatherCode}.png`)}
@@ -19,7 +22,7 @@ export const Current = ({ theme }: CurrentProps) => {
         </div>
         <div className="details">
           <label className="temp">
-            23°<span>C</span>
+            {Math.round(data.temp)}°<span>{unitSymbol}</span>
           </label>
           <label className="feelslike">
             Feels like: <span>27°</span>
@@ -27,9 +30,8 @@ export const Current = ({ theme }: CurrentProps) => {
           <label className="description">sunny</label>
         </div>
       </div>
-      <div className="current-details"></div>
     </>
   );
 };
 
-export default Current;
+export default CurrentWeather;
