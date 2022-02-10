@@ -5,3 +5,11 @@ export interface CurrentWeatherDetailsModel {
   visibility: number;
   wind_speed: number;
 }
+
+export const EmptyCurrentWeatherDetails = {
+  rain: NaN,
+  humidity: NaN,
+  pressure: NaN,
+  visibility: NaN,
+  wind_speed: NaN,
+};

@@ -26,4 +26,34 @@
   }
   height: 100%;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  .current-weather-details-grid {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 30px 30px 30px;
+    grid-template-columns: auto auto;
+    row-gap: 0;
+    column-gap: 15px;
+    padding: 5px 15px;
+    .current-weather-details-grid-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      label:first-child {
+        @include theme() {
+          color: get-color("text-secondary");
+        }
+        font-family: "Barlow", sans-serif;
+        font-size: $body2-font-size;
+      }
+      label:last-child {
+        @include theme() {
+          color: get-color("text");
+        }
+        font-family: "Barlow", sans-serif;
+        font-size: $body2-font-size;
+      }
+    }
+  }
 }

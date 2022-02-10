@@ -40,6 +40,7 @@
       font-family: "Frank Ruhl Libre", serif;
       font-size: $headline0-font-size;
       font-weight: 900;
+      margin-top: -10px;
       margin-bottom: -15px;
       span {
         @include theme() {
