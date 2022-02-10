@@ -14,11 +14,8 @@ type ContainerProps = {
 
 export const Container = ({ theme, setTheme }: ContainerProps) => {
   const unit = "metric";
-  const { isLoading, currentWeather, currentWeatherDetails } = useWeather(
-    45.7634188,
-    21.2397304,
-    unit
-  );
+  const { isLoading, currentWeather, currentWeatherDetails, hourlyWeather } =
+    useWeather(45.7634188, 21.2397304, unit);
 
   return (
     <div className="container">
@@ -33,7 +30,7 @@ export const Container = ({ theme, setTheme }: ContainerProps) => {
           <CurrentWeatherDetails
             data={currentWeatherDetails}
           ></CurrentWeatherDetails>
-          <Hourly theme={theme}></Hourly>
+          <Hourly theme={theme} data={hourlyWeather}></Hourly>
           <Daily theme={theme}></Daily>
         </div>
       ) : (

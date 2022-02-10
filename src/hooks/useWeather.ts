@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CurrentWeatherModel, EmptyCurrentWeather } from "../models";
 import {
   CurrentWeatherDetailsModel,
+  CurrentWeatherModel,
+  EmptyCurrentWeather,
   EmptyCurrentWeatherDetails,
-} from "../models/CurrentWeatherDetailsModel";
+  EmptyHourlyWeatherModel,
+  HourlyWeatherModel,
+} from "../models";
 
 export const useWeather = (lat: number, lon: number, units: string) => {
   const baseUrl = process.env.REACT_APP_OPENWEATHER_API_BASEURL;
@@ -12,10 +15,15 @@ export const useWeather = (lat: number, lon: number, units: string) => {
   const path = "onecall";
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
   const [currentWeather, setCurrentWeather] =
     useState<CurrentWeatherModel>(EmptyCurrentWeather);
   const [currentWeatherDetails, setCurrentWeatherDetails] =
     useState<CurrentWeatherDetailsModel>(EmptyCurrentWeatherDetails);
+
+  const [hourlyWeather, setHourlyWeather] = useState<HourlyWeatherModel>(
+    EmptyHourlyWeatherModel
+  );
 
   useEffect(() => {
     setIsLoading(true);
@@ -26,6 +34,7 @@ export const useWeather = (lat: number, lon: number, units: string) => {
       .then((response) => {
         console.log(response.data);
         setCurrent(response.data.current);
+        setHourly(response.data.hourly);
       })
       .finally(() => {
         setIsLoading(false);
@@ -34,6 +43,7 @@ export const useWeather = (lat: number, lon: number, units: string) => {
 
   const setCurrent = (data: any) => {
     setCurrentWeather({
+      dt: data.dt,
       weather: {
         icon: data.weather[0].icon,
         description: data.weather[0].description,
@@ -50,5 +60,21 @@ export const useWeather = (lat: number, lon: number, units: string) => {
     });
   };
 
-  return { isLoading, currentWeather, currentWeatherDetails };
+  const setHourly = (data: any) => {
+    let hourly: CurrentWeatherModel[] = [];
+    data.forEach((item: any) => {
+      hourly.push({
+        dt: item.dt,
+        weather: {
+          icon: item.weather[0].icon,
+          description: item.weather[0].description,
+        },
+        temp: item.temp,
+        feels_like: item.feels_like,
+      });
+    });
+    setHourlyWeather({ hourly: hourly });
+  };
+
+  return { isLoading, currentWeather, currentWeatherDetails, hourlyWeather };
 };

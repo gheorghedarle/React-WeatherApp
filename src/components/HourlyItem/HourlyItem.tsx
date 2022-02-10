@@ -1,12 +1,15 @@
 import React from "react";
+import { CurrentWeatherModel } from "../../models";
 import "./HourlyItem.scss";
 
 type HourlyItemProps = {
   theme: string;
+  data: CurrentWeatherModel;
 };
 
-export const HourlyItem = ({ theme }: HourlyItemProps) => {
-  const weatherCode = theme === "dark" ? "03d_n" : "03d";
+export const HourlyItem = ({ theme, data }: HourlyItemProps) => {
+  const weatherCode =
+    theme === "dark" ? `${data.weather.icon}_n` : `${data.weather.icon}`;
   return (
     <div className={"hourly-item"}>
       <label className="hour">18:00</label>
@@ -15,7 +18,7 @@ export const HourlyItem = ({ theme }: HourlyItemProps) => {
         className="icon-small"
         alt=""
       />
-      <label className="temp">24°</label>
+      <label className="temp">{Math.round(data.temp)}°</label>
     </div>
   );
 };
