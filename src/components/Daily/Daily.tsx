@@ -1,39 +1,22 @@
 import React, { useState } from "react";
 import DailyItem from "../DailyItem/DailyItem";
+import { DailyWeatherModel } from "../../models";
 import "./Daily.scss";
 
 type DailyProps = {
   theme: string;
+  unit: string;
+  data: DailyWeatherModel;
 };
 
-export const Daily = ({ theme }: DailyProps) => {
-  const dailyWeather = [
-    {
-      id: 1,
-    },
-    {
-      id: 2,
-    },
-    {
-      id: 3,
-    },
-    {
-      id: 4,
-    },
-    {
-      id: 5,
-    },
-    {
-      id: 6,
-    },
-  ];
+export const Daily = ({ theme, unit, data }: DailyProps) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const clickHandler = (h: any) => {
-    if (h.id === activeIndex) {
+  const clickHandler = (d: any) => {
+    if (d.dt === activeIndex) {
       setActiveIndex(null);
     } else {
-      setActiveIndex(h.id);
+      setActiveIndex(d.dt);
     }
   };
   return (
@@ -41,25 +24,43 @@ export const Daily = ({ theme }: DailyProps) => {
       <div className="daily">
         <label className="title">Daily</label>
         <div className="daily-items-container">
-          {dailyWeather.map((h) => (
+          {data.daily.map((d) => (
             <>
               <DailyItem
                 theme={theme}
-                onClick={() => clickHandler(h)}
+                onClick={() => clickHandler(d)}
               ></DailyItem>
               <div
                 className={
-                  activeIndex === h.id
+                  activeIndex === d.dt
                     ? "daily-item-header active"
                     : "daily-item-header"
                 }
               >
-                <div className="daily-item-details">
-                  <div className="daily-item-details-item">
-                    <label>Rain:</label>
-                    <label>0%</label>
+                {/* <div className="daily-item-details">
+                  <div className="daily-details-grid">
+                    <div className="daily-details-grid-item">
+                      <label>Rain:</label>
+                      <label>{d.details.rain}%</label>
+                    </div>{" "}
+                    <div className="daily-details-grid-item">
+                      <label>Pressure:</label>
+                      <label>{d.details.pressure}hPa</label>
+                    </div>{" "}
+                    <div className="daily-details-grid-item">
+                      <label>Humidity:</label>
+                      <label>{d.details.humidity}%</label>
+                    </div>{" "}
+                    <div className="daily-details-grid-item">
+                      <label>Visibility:</label>
+                      <label>{d.details.visibility} km</label>
+                    </div>{" "}
+                    <div className="daily-details-grid-item">
+                      <label>Wind speed:</label>
+                      <label>{d.details.wind_speed} m/s</label>
+                    </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </>
           ))}

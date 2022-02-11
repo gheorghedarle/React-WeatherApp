@@ -5,10 +5,11 @@ import "./Hourly.scss";
 
 type HourlyProps = {
   theme: string;
+  unit: string;
   data: HourlyWeatherModel;
 };
 
-export const Hourly = ({ theme, data }: HourlyProps) => {
+export const Hourly = ({ theme, unit, data }: HourlyProps) => {
   const [activeIndex, setActiveIndex] = useState(
     data && data.hourly ? data.hourly[0].dt : 0
   );
@@ -32,7 +33,7 @@ export const Hourly = ({ theme, data }: HourlyProps) => {
               }
               onClick={() => clickHandler(h)}
             >
-              <HourlyItem theme={theme} data={h}></HourlyItem>
+              <HourlyItem theme={theme} unit={unit} data={h}></HourlyItem>
             </div>
           ))}
         </div>

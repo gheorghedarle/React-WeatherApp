@@ -1,10 +1,16 @@
-import { EmptyWeather, WeatherModel } from ".";
+import {
+  CurrentWeatherDetailsModel,
+  EmptyCurrentWeatherDetails,
+  EmptyWeather,
+  WeatherModel,
+} from ".";
 
 export interface CurrentWeatherModel {
   dt: number;
   weather: WeatherModel;
   temp: number;
   feels_like: number;
+  details?: CurrentWeatherDetailsModel;
 }
 
 export const EmptyCurrentWeather: CurrentWeatherModel = {
@@ -12,4 +18,5 @@ export const EmptyCurrentWeather: CurrentWeatherModel = {
   weather: EmptyWeather,
   temp: NaN,
   feels_like: NaN,
+  details: undefined,
 };

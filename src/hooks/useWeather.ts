@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {
-  CurrentWeatherDetailsModel,
   CurrentWeatherModel,
+  DailyWeatherModel,
   EmptyCurrentWeather,
-  EmptyCurrentWeatherDetails,
+  EmptyDailyWeatherModel,
   EmptyHourlyWeatherModel,
   HourlyWeatherModel,
 } from "../models";
@@ -18,11 +18,11 @@ export const useWeather = (lat: number, lon: number, units: string) => {
 
   const [currentWeather, setCurrentWeather] =
     useState<CurrentWeatherModel>(EmptyCurrentWeather);
-  const [currentWeatherDetails, setCurrentWeatherDetails] =
-    useState<CurrentWeatherDetailsModel>(EmptyCurrentWeatherDetails);
-
   const [hourlyWeather, setHourlyWeather] = useState<HourlyWeatherModel>(
     EmptyHourlyWeatherModel
+  );
+  const [dailyWeather, setDailyWeather] = useState<DailyWeatherModel>(
+    EmptyDailyWeatherModel
   );
 
   useEffect(() => {
@@ -32,9 +32,9 @@ export const useWeather = (lat: number, lon: number, units: string) => {
         `${baseUrl}/${path}?lat=${lat}&lon=${lon}&units=${units}&exclude=minutely,alerts&appid=${apiKey}`
       )
       .then((response) => {
-        console.log(response.data);
         setCurrent(response.data.current);
         setHourly(response.data.hourly);
+        setDaily(response.data.daily);
       })
       .finally(() => {
         setIsLoading(false);
@@ -50,13 +50,13 @@ export const useWeather = (lat: number, lon: number, units: string) => {
       },
       temp: data.temp,
       feels_like: data.feels_like,
-    });
-    setCurrentWeatherDetails({
-      rain: 0,
-      visibility: data.visibility / 1000,
-      humidity: data.humidity,
-      pressure: data.pressure,
-      wind_speed: data.wind_speed,
+      details: {
+        rain: 0,
+        visibility: data.visibility / 1000,
+        humidity: data.humidity,
+        pressure: data.pressure,
+        wind_speed: data.wind_speed,
+      },
     });
   };
 
@@ -71,10 +71,40 @@ export const useWeather = (lat: number, lon: number, units: string) => {
         },
         temp: item.temp,
         feels_like: item.feels_like,
+        // details: {
+        //   rain: 0,
+        //   visibility: data.visibility / 1000,
+        //   humidity: data.humidity,
+        //   pressure: data.pressure,
+        //   wind_speed: data.wind_speed,
+        // },
       });
     });
     setHourlyWeather({ hourly: hourly });
   };
 
-  return { isLoading, currentWeather, currentWeatherDetails, hourlyWeather };
+  const setDaily = (data: any) => {
+    let daily: CurrentWeatherModel[] = [];
+    data.forEach((item: any) => {
+      daily.push({
+        dt: item.dt,
+        weather: {
+          icon: item.weather[0].icon,
+          description: item.weather[0].description,
+        },
+        temp: item.temp,
+        feels_like: item.feels_like,
+        // details: {
+        //   rain: 0,
+        //   visibility: data.visibility / 1000,
+        //   humidity: data.humidity,
+        //   pressure: data.pressure,
+        //   wind_speed: data.wind_speed,
+        // },
+      });
+    });
+    setDailyWeather({ daily: daily });
+  };
+
+  return { isLoading, currentWeather, hourlyWeather, dailyWeather };
 };

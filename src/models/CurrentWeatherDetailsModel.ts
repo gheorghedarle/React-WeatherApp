@@ -6,7 +6,7 @@ export interface CurrentWeatherDetailsModel {
   wind_speed: number;
 }
 
-export const EmptyCurrentWeatherDetails = {
+export const EmptyCurrentWeatherDetails: CurrentWeatherDetailsModel = {
   rain: NaN,
   humidity: NaN,
   pressure: NaN,

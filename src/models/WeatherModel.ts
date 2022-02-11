@@ -3,7 +3,7 @@ export interface WeatherModel {
   icon: string;
 }
 
-export const EmptyWeather = {
+export const EmptyWeather: WeatherModel = {
   description: "",
   icon: "",
 };
