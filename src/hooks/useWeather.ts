@@ -71,13 +71,13 @@ export const useWeather = (lat: number, lon: number, units: string) => {
         },
         temp: item.temp,
         feels_like: item.feels_like,
-        // details: {
-        //   rain: 0,
-        //   visibility: data.visibility / 1000,
-        //   humidity: data.humidity,
-        //   pressure: data.pressure,
-        //   wind_speed: data.wind_speed,
-        // },
+        details: {
+          rain: 0,
+          visibility: item.visibility / 1000,
+          humidity: item.humidity,
+          pressure: item.pressure,
+          wind_speed: item.wind_speed,
+        },
       });
     });
     setHourlyWeather({ hourly: hourly });
@@ -94,13 +94,13 @@ export const useWeather = (lat: number, lon: number, units: string) => {
         },
         temp: item.temp,
         feels_like: item.feels_like,
-        // details: {
-        //   rain: 0,
-        //   visibility: data.visibility / 1000,
-        //   humidity: data.humidity,
-        //   pressure: data.pressure,
-        //   wind_speed: data.wind_speed,
-        // },
+        details: {
+          rain: 0,
+          visibility: item.visibility / 1000,
+          humidity: item.humidity,
+          pressure: item.pressure,
+          wind_speed: item.wind_speed,
+        },
       });
     });
     setDailyWeather({ daily: daily });

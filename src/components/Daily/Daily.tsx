@@ -37,30 +37,32 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
                     : "daily-item-header"
                 }
               >
-                {/* <div className="daily-item-details">
-                  <div className="daily-details-grid">
-                    <div className="daily-details-grid-item">
-                      <label>Rain:</label>
-                      <label>{d.details.rain}%</label>
-                    </div>{" "}
-                    <div className="daily-details-grid-item">
-                      <label>Pressure:</label>
-                      <label>{d.details.pressure}hPa</label>
-                    </div>{" "}
-                    <div className="daily-details-grid-item">
-                      <label>Humidity:</label>
-                      <label>{d.details.humidity}%</label>
-                    </div>{" "}
-                    <div className="daily-details-grid-item">
-                      <label>Visibility:</label>
-                      <label>{d.details.visibility} km</label>
-                    </div>{" "}
-                    <div className="daily-details-grid-item">
-                      <label>Wind speed:</label>
-                      <label>{d.details.wind_speed} m/s</label>
+                {
+                  <div className="daily-item-details">
+                    <div className="daily-details-grid">
+                      <div className="daily-details-grid-item">
+                        <label>Rain:</label>
+                        <label>{d.details?.rain}%</label>
+                      </div>{" "}
+                      <div className="daily-details-grid-item">
+                        <label>Pressure:</label>
+                        <label>{d.details?.pressure}hPa</label>
+                      </div>{" "}
+                      <div className="daily-details-grid-item">
+                        <label>Humidity:</label>
+                        <label>{d.details?.humidity}%</label>
+                      </div>{" "}
+                      <div className="daily-details-grid-item">
+                        <label>Visibility:</label>
+                        <label>{d.details?.visibility} km</label>
+                      </div>{" "}
+                      <div className="daily-details-grid-item">
+                        <label>Wind speed:</label>
+                        <label>{d.details?.wind_speed} m/s</label>
+                      </div>
                     </div>
                   </div>
-                </div> */}
+                }
               </div>
             </>
           ))}
