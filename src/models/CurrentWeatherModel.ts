@@ -1,9 +1,4 @@
-import {
-  CurrentWeatherDetailsModel,
-  EmptyCurrentWeatherDetails,
-  EmptyWeather,
-  WeatherModel,
-} from ".";
+import { CurrentWeatherDetailsModel, EmptyWeather, WeatherModel } from ".";
 
 export interface CurrentWeatherModel {
   dt: number;

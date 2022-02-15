@@ -28,6 +28,8 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
             <>
               <DailyItem
                 theme={theme}
+                unit={unit}
+                data={d}
                 onClick={() => clickHandler(d)}
               ></DailyItem>
               <div
@@ -42,23 +44,23 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
                     <div className="daily-details-grid">
                       <div className="daily-details-grid-item">
                         <label>Rain:</label>
-                        <label>{d.details?.rain}%</label>
+                        <label>{d.rain}%</label>
                       </div>{" "}
                       <div className="daily-details-grid-item">
                         <label>Pressure:</label>
-                        <label>{d.details?.pressure}hPa</label>
+                        <label>{d.pressure}hPa</label>
                       </div>{" "}
                       <div className="daily-details-grid-item">
                         <label>Humidity:</label>
-                        <label>{d.details?.humidity}%</label>
+                        <label>{d.humidity}%</label>
                       </div>{" "}
                       <div className="daily-details-grid-item">
-                        <label>Visibility:</label>
-                        <label>{d.details?.visibility} km</label>
+                        <label>Clouds:</label>
+                        <label>{d.clouds} km</label>
                       </div>{" "}
                       <div className="daily-details-grid-item">
                         <label>Wind speed:</label>
-                        <label>{d.details?.wind_speed} m/s</label>
+                        <label>{d.wind_speed} m/s</label>
                       </div>
                     </div>
                   </div>

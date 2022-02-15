@@ -19,6 +19,14 @@
       color: get-color("text");
     }
   }
+  .description {
+    flex: 1;
+    margin-right: 15px;
+    text-align: right;
+    @include theme() {
+      color: get-color("text");
+    }
+  }
   .min-max {
     @include theme() {
       color: get-color("text-secondary");

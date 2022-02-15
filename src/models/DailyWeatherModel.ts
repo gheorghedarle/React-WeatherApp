@@ -1,7 +1,7 @@
-import { CurrentWeatherModel } from ".";
+import { DailyWeatherDetailsModel } from ".";
 
 export interface DailyWeatherModel {
-  daily: CurrentWeatherModel[];
+  daily: DailyWeatherDetailsModel[];
 }
 
 export const EmptyDailyWeatherModel: DailyWeatherModel = {
