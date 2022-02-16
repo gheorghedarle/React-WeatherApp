@@ -45,22 +45,46 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
                       <div className="daily-details-grid-item">
                         <label>Rain:</label>
                         <label>{d.rain}%</label>
-                      </div>{" "}
+                      </div>
                       <div className="daily-details-grid-item">
                         <label>Pressure:</label>
                         <label>{d.pressure}hPa</label>
-                      </div>{" "}
+                      </div>
                       <div className="daily-details-grid-item">
                         <label>Humidity:</label>
                         <label>{d.humidity}%</label>
-                      </div>{" "}
+                      </div>
                       <div className="daily-details-grid-item">
                         <label>Clouds:</label>
-                        <label>{d.clouds} km</label>
-                      </div>{" "}
+                        <label>{d.clouds}%</label>
+                      </div>
                       <div className="daily-details-grid-item">
                         <label>Wind speed:</label>
                         <label>{d.wind_speed} m/s</label>
+                      </div>
+                      <div className="daily-details-grid-item">
+                        <label>UV Index:</label>
+                        <label>{d.uvi}</label>
+                      </div>
+                      <div className="daily-details-grid-item">
+                        <label>Sunrise:</label>
+                        <label>
+                          {new Date(d.sunrise * 1000).toLocaleString("en-GB", {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: false,
+                          })}
+                        </label>
+                      </div>
+                      <div className="daily-details-grid-item">
+                        <label>Sunset:</label>
+                        <label>
+                          {new Date(d.sunset * 1000).toLocaleString("en-GB", {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: false,
+                          })}
+                        </label>
                       </div>
                     </div>
                   </div>

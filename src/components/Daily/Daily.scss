@@ -32,7 +32,7 @@
       transform: 250ms;
       overflow: hidden;
       &.active {
-        height: 100px;
+        height: 130px;
       }
     }
     .daily-item-details {
@@ -45,7 +45,7 @@
       .daily-details-grid {
         flex: 1;
         display: grid;
-        grid-template-rows: 30px 30px 30px;
+        grid-template-rows: 30px 30px 30px 30px;
         grid-template-columns: auto auto;
         row-gap: 0;
         column-gap: 15px;

@@ -86,7 +86,7 @@ export const useWeather = (lat: number, lon: number, units: string) => {
 
   const setDaily = (data: any) => {
     let daily: DailyWeatherDetailsModel[] = [];
-    data.forEach((item: any) => {
+    data.slice(1).forEach((item: any) => {
       daily.push({
         dt: item.dt,
         clouds: item.clouds,

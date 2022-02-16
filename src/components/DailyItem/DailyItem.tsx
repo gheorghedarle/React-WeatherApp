@@ -20,7 +20,11 @@ export const DailyItem = ({ theme, unit, data, onClick }: DailyItemProps) => {
         className="icon-small"
         alt=""
       />
-      <label className="day">{new Date(data.dt * 1000).getDay()}</label>
+      <label className="day">
+        {new Date(data.dt * 1000).toLocaleString("en-GB", {
+          weekday: "long",
+        })}
+      </label>
       <label className="description">{data.weather.description}</label>
       <label className="min-max">
         {Math.round(data.minTemp)}°{unitSymbol} / {Math.round(data.maxTemp)}°
