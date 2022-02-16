@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HourlyWeatherModel } from "../../models";
+import { CurrentWeatherModel, HourlyWeatherModel } from "../../models";
 import HourlyItem from "../HourlyItem/HourlyItem";
 import "./Hourly.scss";
 
@@ -7,15 +7,17 @@ type HourlyProps = {
   theme: string;
   unit: string;
   data: HourlyWeatherModel;
+  clickHandler: (h: CurrentWeatherModel) => void;
 };
 
-export const Hourly = ({ theme, unit, data }: HourlyProps) => {
+export const Hourly = ({ theme, unit, data, clickHandler }: HourlyProps) => {
   const [activeIndex, setActiveIndex] = useState(
     data && data.hourly ? data.hourly[0].dt : 0
   );
 
-  const clickHandler = (h: any) => {
+  const onClickHandler = (h: CurrentWeatherModel) => {
     setActiveIndex(h.dt);
+    clickHandler(h);
   };
 
   return (
@@ -31,7 +33,7 @@ export const Hourly = ({ theme, unit, data }: HourlyProps) => {
                   ? "hourly-item-container active"
                   : "hourly-item-container"
               }
-              onClick={() => clickHandler(h)}
+              onClick={() => onClickHandler(h)}
             >
               <HourlyItem theme={theme} unit={unit} data={h}></HourlyItem>
             </div>

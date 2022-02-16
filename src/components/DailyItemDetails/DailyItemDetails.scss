@@ -1,41 +1,21 @@
 @import "../../styles/color-themes";
-@import "../../styles/media-queries";
 @import "../../styles/font-size";
 
-.current-weather-details {
-  @include mobile-portrait {
-    grid-column: span 4;
-    grid-row: 3;
-  }
-  @include mobile-landscape {
-    grid-column: span 2;
-  }
-  @include tablet-portrait {
-    grid-column: span 4;
-    grid-row: 3;
-  }
-  @include tablet-landscape {
-    grid-column: span 2;
-  }
-  @include desktop {
-    grid-column: span 2;
-  }
-  @include theme() {
-    background-color: get-color("background-card");
-    box-shadow: 0px 5px 10px 0px get-color("color-shadow");
-  }
-  height: 100%;
-  border-radius: 15px;
+.daily-item-details {
   display: flex;
-  align-items: center;
-  .current-weather-details-grid {
+  @include theme() {
+    color: get-color("text");
+  }
+  font-family: "Barlow", sans-serif;
+  font-size: $body2-font-size;
+  .daily-details-grid {
     flex: 1;
     display: grid;
     grid-template-columns: auto auto;
     row-gap: 0;
     column-gap: 15px;
     padding: 5px 15px;
-    .current-weather-details-grid-item {
+    .daily-details-grid-item {
       display: flex;
       justify-content: space-between;
       align-items: center;

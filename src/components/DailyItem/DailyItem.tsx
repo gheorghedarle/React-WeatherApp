@@ -33,4 +33,5 @@ export const DailyItem = ({ theme, unit, data, onClick }: DailyItemProps) => {
     </div>
   );
 };
+
 export default DailyItem;
