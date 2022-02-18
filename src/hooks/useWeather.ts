@@ -10,7 +10,12 @@ import {
   HourlyWeatherModel,
 } from "../models";
 
-export const useWeather = (lat: number, lon: number, units: string) => {
+export const useWeather = (
+  lat: number,
+  lon: number,
+  units: string,
+  useMockData: boolean
+) => {
   const baseUrl = process.env.REACT_APP_OPENWEATHER_API_BASEURL;
   const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
   const path = "onecall";
@@ -28,10 +33,11 @@ export const useWeather = (lat: number, lon: number, units: string) => {
 
   useEffect(() => {
     setIsLoading(true);
+    const url = useMockData
+      ? "./mock-data/weather.json"
+      : `${baseUrl}/${path}?lat=${lat}&lon=${lon}&units=${units}&exclude=minutely,alerts&appid=${apiKey}`;
     axios
-      .get(
-        `${baseUrl}/${path}?lat=${lat}&lon=${lon}&units=${units}&exclude=minutely,alerts&appid=${apiKey}`
-      )
+      .get(url)
       .then((response) => {
         setCurrent(response.data.current);
         setHourly(response.data.hourly);
@@ -40,7 +46,7 @@ export const useWeather = (lat: number, lon: number, units: string) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [lat, lon, units, baseUrl, apiKey]);
+  }, [lat, lon, units, useMockData, baseUrl, apiKey]);
 
   const setCurrent = (data: any) => {
     setCurrentWeather({
