@@ -3,20 +3,33 @@
 @import "../../styles/font-size";
 
 .current-weather {
+  @include mobile-small-portrait {
+    grid-column: span 4;
+    grid-row: 3;
+  }
+  @include mobile-small-landscape {
+    grid-column: span 2;
+    grid-row: 3;
+  }
   @include mobile-portrait {
     grid-column: span 4;
+    grid-row: 3;
   }
   @include mobile-landscape {
     grid-column: span 2;
+    grid-row: 3;
   }
   @include tablet-portrait {
     grid-column: span 4;
+    grid-row: 3;
   }
   @include tablet-landscape {
     grid-column: span 2;
+    grid-row: 3;
   }
   @include desktop {
     grid-column: span 2;
+    grid-row: 3;
   }
   display: flex;
   justify-content: space-between;

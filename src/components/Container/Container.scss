@@ -2,32 +2,82 @@
 @import "../../styles/media-queries";
 
 .container {
-  @include mobile-portrait {
-    width: 95vw;
-    padding: 2vh 2.5vw;
+  @include mobile-small-portrait {
+    width: 90vw;
+    padding: 3vh 5vw;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, auto);
+      column-gap: 10px;
+      row-gap: 10px;
+    }
   }
   @include mobile-landscape {
-    width: 95vw;
-    padding: 2vh 2.5vw;
+    width: 90vw;
+    padding: 3vh 5vw;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, auto);
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+  }
+  @include mobile-portrait {
+    width: 92vw;
+    padding: 3vh 4vw;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, auto);
+      column-gap: 15px;
+      row-gap: 15px;
+    }
+  }
+  @include mobile-landscape {
+    width: 92vw;
+    padding: 3vh 4vw;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, auto);
+      column-gap: 15px;
+      row-gap: 15px;
+    }
   }
   @include tablet-portrait {
     width: 90vw;
     padding: 2vh 5vw;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, auto);
+      column-gap: 15px;
+      row-gap: 15px;
+    }
   }
   @include tablet-landscape {
     width: 90vw;
     padding: 2vh 5vw;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, auto);
+      column-gap: 15px;
+      row-gap: 15px;
+    }
   }
   @include desktop {
     width: 80vw;
     padding: 2vh 10vw;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, auto);
-    column-gap: 15px;
-    row-gap: 15px;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, auto);
+      column-gap: 15px;
+      row-gap: 15px;
+    }
   }
   .loading {
     @include theme() {

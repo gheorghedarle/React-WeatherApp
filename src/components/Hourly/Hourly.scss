@@ -1,9 +1,36 @@
 @import "../../styles/color-themes";
+@import "../../styles/media-queries";
 @import "../../styles/font-size";
 
 .hourly {
-  grid-column: span 4;
-  grid-row: 4;
+  @include mobile-small-portrait {
+    grid-column: span 4;
+    grid-row: 5;
+  }
+  @include mobile-small-landscape {
+    grid-column: span 4;
+    grid-row: 4;
+  }
+  @include mobile-portrait {
+    grid-column: span 4;
+    grid-row: 5;
+  }
+  @include mobile-landscape {
+    grid-column: span 4;
+    grid-row: 4;
+  }
+  @include tablet-portrait {
+    grid-column: span 4;
+    grid-row: 5;
+  }
+  @include tablet-landscape {
+    grid-column: span 4;
+    grid-row: 4;
+  }
+  @include desktop {
+    grid-column: span 4;
+    grid-row: 4;
+  }
   display: flex;
   flex-direction: column;
   .title {
