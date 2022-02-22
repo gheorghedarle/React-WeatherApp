@@ -1,14 +1,15 @@
 import React from "react";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ThemeType } from "../../models";
 import "./Header.scss";
 
 type HeaderProps = {
   theme: string;
-  setTheme: (theme: string) => void;
+  changeTheme: (theme: ThemeType) => void;
 };
 
-export const Header = ({ theme, setTheme }: HeaderProps) => {
+export const Header = ({ theme, changeTheme }: HeaderProps) => {
   const getCurrentDate = () => {
     var date = new Date().toLocaleString("en-GB", {
       day: "numeric",
@@ -40,8 +41,8 @@ export const Header = ({ theme, setTheme }: HeaderProps) => {
         <div
           className="button-theme"
           onClick={() => {
-            if (theme === "dark") setTheme("light");
-            else setTheme("dark");
+            if (theme === "dark") changeTheme("light");
+            else changeTheme("dark");
           }}
         >
           <FontAwesomeIcon

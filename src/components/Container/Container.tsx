@@ -5,20 +5,19 @@ import CurrentWeather from "../CurrentWeather/CurrentWeather";
 import CurrentWeatherDetails from "../CurrentWeatherDetails/CurrentWeatherDetails";
 import Hourly from "../Hourly/Hourly";
 import Daily from "../Daily/Daily";
-import "./Container.scss";
 import {
-  CurrentWeatherDetailsModel,
   CurrentWeatherModel,
   EmptyCurrentWeather,
-  EmptyCurrentWeatherDetails,
+  ThemeType,
 } from "../../models";
+import "./Container.scss";
 
 type ContainerProps = {
   theme: string;
-  setTheme: (theme: string) => void;
+  changeTheme: (theme: ThemeType) => void;
 };
 
-export const Container = ({ theme, setTheme }: ContainerProps) => {
+export const Container = ({ theme, changeTheme }: ContainerProps) => {
   const unit = "metric";
   const { isLoading, currentWeather, hourlyWeather, dailyWeather } = useWeather(
     45.7634188,
@@ -42,7 +41,7 @@ export const Container = ({ theme, setTheme }: ContainerProps) => {
     <div className="container">
       {!isLoading ? (
         <div className="grid-container">
-          <Header theme={theme} setTheme={setTheme}></Header>
+          <Header theme={theme} changeTheme={changeTheme}></Header>
           <CurrentWeather
             theme={theme}
             unit={unit}

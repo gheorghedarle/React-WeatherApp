@@ -1,3 +1,5 @@
+export * from "./Settings";
+
 export * from "./WeatherModel";
 export * from "./CurrentWeatherModel";
 export * from "./CurrentWeatherDetailsModel";

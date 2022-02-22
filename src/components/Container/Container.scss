@@ -4,7 +4,7 @@
 .container {
   @include mobile-small-portrait {
     width: 90vw;
-    padding: 3vh 5vw;
+    padding: 3vh 4.5vw;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -15,7 +15,7 @@
   }
   @include mobile-landscape {
     width: 90vw;
-    padding: 3vh 5vw;
+    padding: 3vh 4.5vw;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -26,7 +26,7 @@
   }
   @include mobile-portrait {
     width: 92vw;
-    padding: 3vh 4vw;
+    padding: 3vh 3.5vw;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -37,7 +37,7 @@
   }
   @include mobile-landscape {
     width: 92vw;
-    padding: 3vh 4vw;
+    padding: 3vh 3.5vw;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -48,7 +48,7 @@
   }
   @include tablet-portrait {
     width: 90vw;
-    padding: 2vh 5vw;
+    padding: 2vh 4.5vw;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -59,7 +59,7 @@
   }
   @include tablet-landscape {
     width: 90vw;
-    padding: 2vh 5vw;
+    padding: 2vh 4.5vw;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -70,7 +70,7 @@
   }
   @include desktop {
     width: 80vw;
-    padding: 2vh 10vw;
+    padding: 2vh 9.5vw;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
