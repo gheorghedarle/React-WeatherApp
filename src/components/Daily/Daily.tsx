@@ -26,7 +26,7 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
         <label className="title">Daily</label>
         <div className="daily-items-container">
           {data.daily.map((d) => (
-            <>
+            <div key={d.dt}>
               <DailyItem
                 theme={theme}
                 unit={unit}
@@ -46,7 +46,7 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
                   data={d}
                 ></DailyItemDetails>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>

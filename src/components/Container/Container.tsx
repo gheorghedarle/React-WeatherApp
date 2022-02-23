@@ -23,7 +23,7 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
     45.7634188,
     21.2397304,
     unit,
-    true
+    false
   );
 
   const [currentWeatherSelectedItem, setCurrentWeatherSelectedItem] =

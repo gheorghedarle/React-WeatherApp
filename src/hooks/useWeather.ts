@@ -79,7 +79,7 @@ export const useWeather = (
         temp: item.temp,
         feels_like: item.feels_like,
         details: {
-          rain: 0,
+          rain: item.pop * 100,
           visibility: item.visibility / 1000,
           humidity: item.humidity,
           pressure: item.pressure,
@@ -108,7 +108,7 @@ export const useWeather = (
           description: item.weather[0].description,
         },
         wind_speed: item.wind_speed,
-        rain: 0,
+        rain: item.pop * 100,
       });
     });
     setDailyWeather({ daily: daily });
