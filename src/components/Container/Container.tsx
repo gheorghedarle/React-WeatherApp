@@ -41,7 +41,11 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
     <div className="container">
       {!isLoading ? (
         <div className="grid-container">
-          <Header theme={theme} changeTheme={changeTheme}></Header>
+          <Header
+            data={currentWeatherSelectedItem}
+            theme={theme}
+            changeTheme={changeTheme}
+          ></Header>
           <CurrentWeather
             theme={theme}
             unit={unit}

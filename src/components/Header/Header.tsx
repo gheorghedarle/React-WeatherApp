@@ -1,32 +1,31 @@
 import React from "react";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ThemeType } from "../../models";
+import { CurrentWeatherModel, ThemeType } from "../../models";
 import "./Header.scss";
 
 type HeaderProps = {
+  data: CurrentWeatherModel;
   theme: string;
   changeTheme: (theme: ThemeType) => void;
 };
 
-export const Header = ({ theme, changeTheme }: HeaderProps) => {
+export const Header = ({ data, theme, changeTheme }: HeaderProps) => {
   const getCurrentDate = () => {
-    var date = new Date().toLocaleString("en-GB", {
+    const selectedDate = new Date(data.dt * 1000);
+    var date = selectedDate.toLocaleString("en-GB", {
       day: "numeric",
       weekday: "long",
       month: "long",
     });
-
-    var year = new Date().toLocaleString("en-GB", {
+    var year = selectedDate.toLocaleString("en-GB", {
       year: "numeric",
     });
-
-    var hour = new Date().toLocaleString("en-GB", {
+    var hour = selectedDate.toLocaleString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
     });
-
     return `${date} ${year} ${hour}`;
   };
 
