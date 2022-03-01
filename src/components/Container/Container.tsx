@@ -20,8 +20,6 @@ type ContainerProps = {
 export const Container = ({ theme, changeTheme }: ContainerProps) => {
   const unit = "metric";
   const { isLoading, currentWeather, hourlyWeather, dailyWeather } = useWeather(
-    45.7634188,
-    21.2397304,
     unit,
     false
   );
