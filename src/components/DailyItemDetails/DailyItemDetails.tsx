@@ -35,7 +35,7 @@ export const DailyItemDetails = ({
           </div>
           <div className="daily-details-grid-item">
             <label>Wind speed:</label>
-            <label>{data.wind_speed} m/s</label>
+            <label>{Math.round(data.wind_speed)} m/s</label>
           </div>
           <div className="daily-details-grid-item">
             <label>UV Index:</label>
