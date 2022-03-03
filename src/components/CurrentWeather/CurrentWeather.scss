@@ -55,6 +55,7 @@
       font-weight: 900;
       margin-top: -10px;
       margin-bottom: -15px;
+      letter-spacing: -3px;
       span {
         @include theme() {
           color: get-color("text");
