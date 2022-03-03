@@ -17,3 +17,23 @@ body {
   transition: background-color 0.5s ease;
   transform: 250ms;
 }
+
+// scrollbar
+::-webkit-scrollbar {
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  @include theme() {
+    background: get-color("background-unselected-card");
+  }
+}
+::-webkit-scrollbar-thumb {
+  @include theme() {
+    background: get-color("background-card");
+  }
+}
+::-webkit-scrollbar-thumb:hover {
+  @include theme() {
+    background: get-color("text");
+  }
+}

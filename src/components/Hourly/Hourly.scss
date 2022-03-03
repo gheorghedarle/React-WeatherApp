@@ -44,7 +44,8 @@
   }
   .hourly-items-container {
     white-space: nowrap;
-    overflow-x: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: proximity;
     cursor: pointer;
     .hourly-item-container {
       &.active {
