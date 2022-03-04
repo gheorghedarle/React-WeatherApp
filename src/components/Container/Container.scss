@@ -1,16 +1,18 @@
 @import "../../styles/color-themes";
 @import "../../styles/media-queries";
+@import "../../styles/variables";
 
 .container {
   @include mobile-small-portrait {
-    width: 90vw;
-    padding: 3vh 4.5vw;
+    width: $small-portrait-width;
+    padding: $small-portrait-padding-top-bottom
+      $small-portrait-padding-left-right;
     .grid-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(6, auto);
-      column-gap: 10px;
-      row-gap: 10px;
+      column-gap: $small-portrait-grip-gap;
+      row-gap: $small-portrait-grip-gap;
     }
   }
   @include mobile-landscape {
