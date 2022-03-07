@@ -19,10 +19,14 @@ type ContainerProps = {
 
 export const Container = ({ theme, changeTheme }: ContainerProps) => {
   const unit = "metric";
-  const { isLoading, currentWeather, hourlyWeather, dailyWeather } = useWeather(
-    unit,
-    false
-  );
+  const {
+    isLoading,
+    locality,
+    country,
+    currentWeather,
+    hourlyWeather,
+    dailyWeather,
+  } = useWeather(unit, false);
 
   const [currentWeatherSelectedItem, setCurrentWeatherSelectedItem] =
     useState(EmptyCurrentWeather);
@@ -40,6 +44,8 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
       {!isLoading ? (
         <div className="grid-container">
           <Header
+            locality={locality}
+            country={country}
             data={currentWeatherSelectedItem}
             theme={theme}
             changeTheme={changeTheme}

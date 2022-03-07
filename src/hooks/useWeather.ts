@@ -16,7 +16,7 @@ export const useWeather = (units: string, useMockData: boolean) => {
   const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
   const path = "onecall";
 
-  const { location } = useLocation();
+  const { location, locality, country } = useLocation();
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentWeather, setCurrentWeather] =
@@ -113,5 +113,12 @@ export const useWeather = (units: string, useMockData: boolean) => {
     setDailyWeather({ daily: daily });
   };
 
-  return { isLoading, currentWeather, hourlyWeather, dailyWeather };
+  return {
+    isLoading,
+    locality,
+    country,
+    currentWeather,
+    hourlyWeather,
+    dailyWeather,
+  };
 };
