@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const useLocation = () => {
-  const apiKey = process.env.REACT_APP_GEOLOCA_API_KEY;
+  const apiKey = process.env.REACT_APP_GEOLOCATION_API_KEY;
+  const geocodeBaseUrl = process.env.REACT_APP_GEOLOCATION_GEOCODE_BASEURL;
 
   const [location, setLocation] = useState<GeolocationPosition>();
   const [locality, setLocality] = useState<string>();
@@ -25,7 +26,7 @@ export const useLocation = () => {
   const getLocationDetails = (position: GeolocationPosition) => {
     axios
       .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&result_type=locality&key=${apiKey}`
+        `${geocodeBaseUrl}?latlng=${position.coords.latitude},${position.coords.longitude}&result_type=locality&key=${apiKey}`
       )
       .then((res: any) => {
         if (res.data && res.data.results[0]) {
