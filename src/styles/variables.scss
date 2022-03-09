@@ -1,4 +1,48 @@
-$small-portrait-width: 90vw;
-$small-portrait-padding-top-bottom: 3vw;
-$small-portrait-padding-left-right: 4.5vw;
-$small-portrait-grip-gap: 10px;
+$mobile-small-portrait-width: 90vw;
+$mobile-small-portrait-padding-top-bottom: 3vh;
+$mobile-small-portrait-padding-left-right: 4.5vw;
+$mobile-small-portrait-grid-columns: 4;
+$mobile-small-portrait-grid-rows: 6;
+$mobile-small-portrait-grid-gap: 10px;
+
+$mobile-small-landscape-width: 90vw;
+$mobile-small-landscape-padding-top-bottom: 3vh;
+$mobile-small-landscape-padding-left-right: 4.5vw;
+$mobile-small-landscape-grid-columns: 4;
+$mobile-small-landscape-grid-rows: 5;
+$mobile-small-landscape-grid-gap: 10px;
+
+$mobile-portrait-width: 92vw;
+$mobile-portrait-padding-top-bottom: 3vh;
+$mobile-portrait-padding-left-right: 3.5vw;
+$mobile-portrait-grid-columns: 4;
+$mobile-portrait-grid-rows: 6;
+$mobile-portrait-grid-gap: 15px;
+
+$mobile-landscape-width: 92vw;
+$mobile-landscape-padding-top-bottom: 3vh;
+$mobile-landscape-padding-left-right: 4.5vw;
+$mobile-landscape-grid-columns: 4;
+$mobile-landscape-grid-rows: 5;
+$mobile-landscape-grid-gap: 15px;
+
+$tablet-portrait-width: 90vw;
+$tablet-portrait-padding-top-bottom: 2vh;
+$tablet-portrait-padding-left-right: 4.5vw;
+$tablet-portrait-grid-columns: 4;
+$tablet-portrait-grid-rows: 6;
+$tablet-portrait-grid-gap: 15px;
+
+$tablet-landscape-width: 90vw;
+$tablet-landscape-padding-top-bottom: 2vh;
+$tablet-landscape-padding-left-right: 4.5vw;
+$tablet-landscape-grid-columns: 4;
+$tablet-landscape-grid-rows: 5;
+$tablet-landscape-grid-gap: 15px;
+
+$desktop-width: 80vw;
+$desktop-padding-top-bottom: 3vh;
+$desktop-padding-left-right: 9vw;
+$desktop-grid-columns: 4;
+$desktop-grid-rows: 5;
+$desktop-grid-gap: 15px;

@@ -4,81 +4,86 @@
 
 .container {
   @include mobile-small-portrait {
-    width: $small-portrait-width;
-    padding: $small-portrait-padding-top-bottom
-      $small-portrait-padding-left-right;
+    width: $mobile-small-portrait-width;
+    padding: $mobile-small-portrait-padding-top-bottom
+      $mobile-small-portrait-padding-left-right;
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(6, auto);
-      column-gap: $small-portrait-grip-gap;
-      row-gap: $small-portrait-grip-gap;
+      grid-template-columns: repeat($mobile-small-portrait-grid-columns, 1fr);
+      grid-template-rows: repeat($mobile-small-portrait-grid-rows, auto);
+      column-gap: $mobile-small-portrait-grid-gap;
+      row-gap: $mobile-small-portrait-grid-gap;
     }
   }
-  @include mobile-landscape {
-    width: 90vw;
-    padding: 3vh 4.5vw;
+  @include mobile-small-landscape {
+    width: $mobile-small-landscape-width;
+    padding: $mobile-small-landscape-padding-top-bottom
+      $mobile-small-landscape-padding-left-right;
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(5, auto);
-      column-gap: 10px;
-      row-gap: 10px;
+      grid-template-columns: repeat($mobile-small-landscape-grid-columns, 1fr);
+      grid-template-rows: repeat($mobile-small-landscape-grid-rows, auto);
+      column-gap: $mobile-small-landscape-grid-gap;
+      row-gap: $mobile-small-landscape-grid-gap;
     }
   }
   @include mobile-portrait {
-    width: 92vw;
-    padding: 3vh 3.5vw;
+    width: $mobile-portrait-width;
+    padding: $mobile-portrait-padding-top-bottom
+      $mobile-portrait-padding-left-right;
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(6, auto);
-      column-gap: 15px;
-      row-gap: 15px;
+      grid-template-columns: repeat($mobile-portrait-grid-columns, 1fr);
+      grid-template-rows: repeat($mobile-portrait-grid-rows, auto);
+      column-gap: $mobile-portrait-grid-gap;
+      row-gap: $mobile-portrait-grid-gap;
     }
   }
   @include mobile-landscape {
-    width: 92vw;
-    padding: 3vh 3.5vw;
+    width: $mobile-landscape-width;
+    padding: $mobile-landscape-padding-top-bottom
+      $mobile-landscape-padding-left-right;
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(5, auto);
-      column-gap: 15px;
-      row-gap: 15px;
+      grid-template-columns: repeat($mobile-landscape-grid-columns, 1fr);
+      grid-template-rows: repeat($mobile-landscape-grid-rows, auto);
+      column-gap: $mobile-landscape-grid-gap;
+      row-gap: $mobile-landscape-grid-gap;
     }
   }
   @include tablet-portrait {
-    width: 90vw;
-    padding: 2vh 4.5vw;
+    width: $tablet-portrait-width;
+    padding: $tablet-portrait-padding-top-bottom
+      $tablet-portrait-padding-left-right;
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(6, auto);
-      column-gap: 15px;
-      row-gap: 15px;
+      grid-template-columns: repeat($tablet-portrait-grid-columns, 1fr);
+      grid-template-rows: repeat($tablet-portrait-grid-rows, auto);
+      column-gap: $tablet-portrait-grid-gap;
+      row-gap: $tablet-portrait-grid-gap;
     }
   }
   @include tablet-landscape {
-    width: 90vw;
-    padding: 2vh 4.5vw;
+    width: $tablet-landscape-width;
+    padding: $tablet-landscape-padding-top-bottom
+      $tablet-landscape-padding-left-right;
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(5, auto);
-      column-gap: 15px;
-      row-gap: 15px;
+      grid-template-columns: repeat($tablet-landscape-grid-columns, 1fr);
+      grid-template-rows: repeat($tablet-landscape-grid-rows, auto);
+      column-gap: $tablet-landscape-grid-gap;
+      row-gap: $tablet-landscape-grid-gap;
     }
   }
   @include desktop {
-    width: 80vw;
-    padding: 2vh 9.5vw;
+    width: $desktop-width;
+    padding: $desktop-padding-top-bottom $desktop-padding-left-right;
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(5, auto);
-      column-gap: 15px;
-      row-gap: 15px;
+      grid-template-columns: repeat($desktop-grid-columns, 1fr);
+      grid-template-rows: repeat($desktop-grid-rows, auto);
+      column-gap: $desktop-grid-gap;
+      row-gap: $desktop-grid-gap;
     }
   }
   .loading {
