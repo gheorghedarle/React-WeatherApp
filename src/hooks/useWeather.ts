@@ -14,9 +14,8 @@ import {
 export const useWeather = (units: string, useMockData: boolean) => {
   const baseUrl = process.env.REACT_APP_OPENWEATHER_API_BASEURL;
   const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
-  const path = "onecall";
 
-  const { location, locality, country } = useLocation();
+  const { location } = useLocation();
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentWeather, setCurrentWeather] =
@@ -33,7 +32,7 @@ export const useWeather = (units: string, useMockData: boolean) => {
     if (location) {
       const url = useMockData
         ? "./mock-data/weather.json"
-        : `${baseUrl}/${path}?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=${units}&exclude=minutely,alerts&appid=${apiKey}`;
+        : `${baseUrl}?lat=${location.position.latitude}&lon=${location.position.longitude}&units=${units}&exclude=minutely,alerts&appid=${apiKey}`;
       axios
         .get(url)
         .then((response) => {
@@ -115,8 +114,7 @@ export const useWeather = (units: string, useMockData: boolean) => {
 
   return {
     isLoading,
-    locality,
-    country,
+    location,
     currentWeather,
     hourlyWeather,
     dailyWeather,
