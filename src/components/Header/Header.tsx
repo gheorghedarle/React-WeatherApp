@@ -10,6 +10,7 @@ type HeaderProps = {
   data: CurrentWeatherModel;
   theme: string;
   changeTheme: (theme: ThemeType) => void;
+  changeLocation: (location: string) => void;
 };
 
 export const Header = ({
@@ -18,6 +19,7 @@ export const Header = ({
   data,
   theme,
   changeTheme,
+  changeLocation,
 }: HeaderProps) => {
   const getFormatedDate = () => {
     const selectedDate = new Date(data.dt * 1000);
@@ -58,7 +60,15 @@ export const Header = ({
         </div>
       </div>
       <div className="search">
-        <input className="input" placeholder="Enter your location"></input>
+        <input
+          className="input"
+          placeholder="Enter your location"
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              changeLocation(e.currentTarget.value);
+            }
+          }}
+        ></input>
       </div>
     </>
   );

@@ -33,6 +33,10 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
     setCurrentWeatherSelectedItem(current);
   };
 
+  const changeLocationHandler = (location: string) => {
+    console.log(location);
+  };
+
   return (
     <div className="container">
       {!isLoading ? (
@@ -43,6 +47,7 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
             data={currentWeatherSelectedItem}
             theme={theme}
             changeTheme={changeTheme}
+            changeLocation={changeLocationHandler}
           ></Header>
           <CurrentWeather
             theme={theme}
