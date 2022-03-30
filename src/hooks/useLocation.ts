@@ -2,24 +2,28 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { EmptyLocationModel, LocationModel } from "../models";
 
-export const useLocation = () => {
+export const useLocation = (locationName: string, useMockData: boolean) => {
   const apiKey = process.env.REACT_APP_GEOLOCATION_API_KEY;
   const geocodeBaseUrl = process.env.REACT_APP_GEOLOCATION_GEOCODE_BASEURL;
 
   const [location, setLocation] = useState<LocationModel>(EmptyLocationModel);
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (pos: GeolocationPosition) => {
-          getLocationDetails(pos);
-        },
-        () => {
-          console.log("Error - Location");
-        }
-      );
+    if (locationName === "") {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos: GeolocationPosition) => {
+            getLocationDetails(pos);
+          },
+          () => {
+            console.log("Error - Location");
+          }
+        );
+      }
+    } else {
+      console.log(locationName);
     }
-  }, []);
+  }, [locationName]);
 
   const getLocationDetails = (position: GeolocationPosition) => {
     axios

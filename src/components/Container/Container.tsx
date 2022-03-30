@@ -19,11 +19,13 @@ type ContainerProps = {
 
 export const Container = ({ theme, changeTheme }: ContainerProps) => {
   const unit = "metric";
-  const { isLoading, location, currentWeather, hourlyWeather, dailyWeather } =
-    useWeather(unit, false);
 
   const [currentWeatherSelectedItem, setCurrentWeatherSelectedItem] =
     useState(EmptyCurrentWeather);
+  const [currentLocationName, setCurrentLocationName] = useState<string>("");
+
+  const { isLoading, location, currentWeather, hourlyWeather, dailyWeather } =
+    useWeather(currentLocationName, unit, true);
 
   useEffect(() => {
     setCurrentWeatherSelectedItem(currentWeather);
