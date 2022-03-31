@@ -18,14 +18,15 @@ type ContainerProps = {
 };
 
 export const Container = ({ theme, changeTheme }: ContainerProps) => {
-  const unit = "metric";
+  const unit: string = "metric";
+  const useMockData: boolean = true;
 
   const [currentWeatherSelectedItem, setCurrentWeatherSelectedItem] =
     useState(EmptyCurrentWeather);
   const [currentLocationName, setCurrentLocationName] = useState<string>("");
 
   const { isLoading, location, currentWeather, hourlyWeather, dailyWeather } =
-    useWeather(currentLocationName, unit, true);
+    useWeather(currentLocationName, unit, useMockData);
 
   useEffect(() => {
     setCurrentWeatherSelectedItem(currentWeather);
@@ -40,36 +41,50 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
   };
 
   return (
-    <div className="container">
-      {!isLoading ? (
-        <div className="grid-container">
-          <Header
-            locality={location.locality}
-            country={location.country}
-            data={currentWeatherSelectedItem}
-            theme={theme}
-            changeTheme={changeTheme}
-            changeLocation={changeLocationHandler}
-          ></Header>
-          <CurrentWeather
-            theme={theme}
-            unit={unit}
-            data={currentWeatherSelectedItem}
-          ></CurrentWeather>
-          <CurrentWeatherDetails
-            data={currentWeatherSelectedItem.details}
-          ></CurrentWeatherDetails>
-          <Hourly
-            theme={theme}
-            unit={unit}
-            data={hourlyWeather}
-            clickHandler={hourlyItemClickHandler}
-          ></Hourly>
-          <Daily theme={theme} unit={unit} data={dailyWeather}></Daily>
+    <>
+      {useMockData ? (
+        <div className="info-popup">
+          The application is running in demo mode. To run the application with
+          real data please check the{" "}
+          <a href="https://github.com/gheorghedarle/React-WeatherApp">
+            documentation
+          </a>
+          .
         </div>
       ) : (
-        <div className="loading">Loading...</div>
+        <></>
       )}
-    </div>
+      <div className="container">
+        {!isLoading ? (
+          <div className="grid-container">
+            <Header
+              locality={location.locality}
+              country={location.country}
+              data={currentWeatherSelectedItem}
+              theme={theme}
+              changeTheme={changeTheme}
+              changeLocation={changeLocationHandler}
+            ></Header>
+            <CurrentWeather
+              theme={theme}
+              unit={unit}
+              data={currentWeatherSelectedItem}
+            ></CurrentWeather>
+            <CurrentWeatherDetails
+              data={currentWeatherSelectedItem.details}
+            ></CurrentWeatherDetails>
+            <Hourly
+              theme={theme}
+              unit={unit}
+              data={hourlyWeather}
+              clickHandler={hourlyItemClickHandler}
+            ></Hourly>
+            <Daily theme={theme} unit={unit} data={dailyWeather}></Daily>
+          </div>
+        ) : (
+          <div className="loading">Loading...</div>
+        )}
+      </div>
+    </>
   );
 };
