@@ -37,7 +37,7 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
   };
 
   const changeLocationHandler = (location: string) => {
-    console.log(location);
+    setCurrentLocationName(location);
   };
 
   return (
