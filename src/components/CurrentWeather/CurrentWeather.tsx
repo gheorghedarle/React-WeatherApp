@@ -10,9 +10,11 @@ type CurrentWeatherProps = {
 
 export const CurrentWeather = ({ theme, unit, data }: CurrentWeatherProps) => {
   const weatherCode =
-    data && theme === "dark"
-      ? `${data.weather.icon}_n`
-      : `${data.weather.icon}`;
+    data.weather.icon !== ""
+      ? theme === "dark"
+        ? `${data.weather.icon}_n`
+        : `${data.weather.icon}`
+      : "01d"; // replace with default image
   const unitSymbol = unit === "metric" ? "C" : "F";
   return (
     <>

@@ -54,6 +54,10 @@
       column-gap: $mobile-small-portrait-grid-gap;
       row-gap: $mobile-small-portrait-grid-gap;
     }
+    .loading-contianer {
+      width: $mobile-small-portrait-width;
+      height: 100vh;
+    }
   }
   @include mobile-small-landscape {
     width: $mobile-small-landscape-width;
@@ -65,6 +69,10 @@
       grid-template-rows: repeat($mobile-small-landscape-grid-rows, auto);
       column-gap: $mobile-small-landscape-grid-gap;
       row-gap: $mobile-small-landscape-grid-gap;
+    }
+    .loading-contianer {
+      width: $mobile-small-landscape-width;
+      height: 100vh;
     }
   }
   @include mobile-portrait {
@@ -78,6 +86,10 @@
       column-gap: $mobile-portrait-grid-gap;
       row-gap: $mobile-portrait-grid-gap;
     }
+    .loading-contianer {
+      width: $mobile-portrait-width;
+      height: 100vh;
+    }
   }
   @include mobile-landscape {
     width: $mobile-landscape-width;
@@ -89,6 +101,10 @@
       grid-template-rows: repeat($mobile-landscape-grid-rows, auto);
       column-gap: $mobile-landscape-grid-gap;
       row-gap: $mobile-landscape-grid-gap;
+    }
+    .loading-contianer {
+      width: $mobile-landscape-width;
+      height: 100vh;
     }
   }
   @include tablet-portrait {
@@ -102,6 +118,10 @@
       column-gap: $tablet-portrait-grid-gap;
       row-gap: $tablet-portrait-grid-gap;
     }
+    .loading-contianer {
+      width: $tablet-portrait-width;
+      height: 100vh;
+    }
   }
   @include tablet-landscape {
     width: $tablet-landscape-width;
@@ -114,6 +134,10 @@
       column-gap: $tablet-landscape-grid-gap;
       row-gap: $tablet-landscape-grid-gap;
     }
+    .loading-contianer {
+      width: $tablet-landscape-width;
+      height: 100vh;
+    }
   }
   @include desktop {
     width: $desktop-width;
@@ -125,14 +149,11 @@
       column-gap: $desktop-grid-gap;
       row-gap: $desktop-grid-gap;
     }
+    .loading-contianer {
+      width: $desktop-width;
+      height: 100vh;
+    }
   }
   margin-left: auto;
   margin-right: auto;
-  .loading {
-    @include theme() {
-      color: get-color("text");
-    }
-    height: 100%;
-    width: 100%;
-  }
 }

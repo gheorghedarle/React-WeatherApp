@@ -10,6 +10,7 @@ import {
   EmptyCurrentWeather,
   ThemeType,
 } from "../../models";
+import { LoadingComponent } from "../Common";
 import "./Container.scss";
 
 type ContainerProps = {
@@ -82,7 +83,9 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
             <Daily theme={theme} unit={unit} data={dailyWeather}></Daily>
           </div>
         ) : (
-          <div className="loading">Loading...</div>
+          <div className="loading-container">
+            <LoadingComponent />
+          </div>
         )}
       </div>
     </>

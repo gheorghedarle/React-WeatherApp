@@ -12,7 +12,7 @@ type HourlyProps = {
 
 export const Hourly = ({ theme, unit, data, clickHandler }: HourlyProps) => {
   const [activeIndex, setActiveIndex] = useState(
-    data && data.hourly ? data.hourly[0].dt : 0
+    data && data.hourly[0] ? data.hourly[0].dt : 0
   );
 
   const onClickHandler = (h: CurrentWeatherModel) => {
