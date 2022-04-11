@@ -20,3 +20,5 @@ If you like this repository you can support me on
 
 ## Resources
 Illustrations are from [Freepik](https://www.freepik.com/)
+
+## Other versions
