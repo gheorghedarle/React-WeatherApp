@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import ScrollContainer from "react-indiana-drag-scroll";
 import { CurrentWeatherModel, HourlyWeatherModel } from "../../models";
-import { ListComponent } from "../Common";
 import HourlyItem from "../HourlyItem/HourlyItem";
 import "./Hourly.scss";
 
@@ -26,7 +26,7 @@ export const Hourly = ({ theme, unit, data, clickHandler }: HourlyProps) => {
       <div className="hourly">
         <label className="title">Hourly</label>
         <div className="hourly-items-container">
-          <ListComponent>
+          <ScrollContainer>
             {data.hourly.map((h) => (
               <div
                 key={h.dt}
@@ -40,7 +40,7 @@ export const Hourly = ({ theme, unit, data, clickHandler }: HourlyProps) => {
                 <HourlyItem theme={theme} unit={unit} data={h}></HourlyItem>
               </div>
             ))}
-          </ListComponent>
+          </ScrollContainer>
         </div>
       </div>
     </>
