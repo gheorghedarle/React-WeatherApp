@@ -9,6 +9,7 @@ import {
   CurrentWeatherModel,
   EmptyCurrentWeather,
   ThemeType,
+  UnitType,
 } from "../../models";
 import { LoadingComponent } from "../Common";
 import "./Container.scss";
@@ -19,9 +20,9 @@ type ContainerProps = {
 };
 
 export const Container = ({ theme, changeTheme }: ContainerProps) => {
-  const unit: string = "metric";
   const useMockData: boolean = false;
 
+  const [unit, setUnit] = useState<UnitType>("metric");
   const [currentWeatherSelectedItem, setCurrentWeatherSelectedItem] =
     useState(EmptyCurrentWeather);
   const [currentLocationName, setCurrentLocationName] = useState<string>("");
@@ -39,6 +40,10 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
 
   const changeLocationHandler = (location: string) => {
     setCurrentLocationName(location);
+  };
+
+  const changeUnit = (unit: UnitType) => {
+    setUnit(unit);
   };
 
   return (
@@ -62,7 +67,9 @@ export const Container = ({ theme, changeTheme }: ContainerProps) => {
               locality={location.locality}
               country={location.country}
               data={currentWeatherSelectedItem}
+              unit={unit}
               theme={theme}
+              changeUnit={changeUnit}
               changeTheme={changeTheme}
               changeLocation={changeLocationHandler}
             ></Header>

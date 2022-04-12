@@ -34,6 +34,25 @@
 .settings {
   display: flex;
   justify-content: flex-end;
+  .units {
+    font-family: "Barlow", sans-serif;
+    font-size: $body2-font-size;
+    margin-top: 3px;
+    margin-right: 15px;
+    span {
+      @include theme() {
+        color: get-color("text-secondary");
+      }
+      cursor: pointer;
+      margin-right: 5px;
+      &.active {
+        @include theme() {
+          color: get-color("text");
+          font-weight: 600;
+        }
+      }
+    }
+  }
   .button-theme {
     @include theme() {
       color: get-color("text");
