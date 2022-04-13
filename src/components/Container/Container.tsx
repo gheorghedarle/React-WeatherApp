@@ -20,7 +20,7 @@ type ContainerProps = {
 };
 
 export const Container = ({ theme, changeTheme }: ContainerProps) => {
-  const useMockData: boolean = false;
+  const useMockData: boolean = true;
 
   const [unit, setUnit] = useState<UnitType>("metric");
   const [currentWeatherSelectedItem, setCurrentWeatherSelectedItem] =
