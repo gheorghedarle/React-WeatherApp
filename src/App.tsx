@@ -1,33 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Container } from "./components/Container/Container";
-import { ThemeType } from "./models";
+import { SettingsModel, ThemeType } from "./models";
 import "./App.scss";
 
 export const App = () => {
-  const [theme, setTheme] = useState<string>("");
+  const useMockData: boolean = true;
+  const [settings, setSettings] = useState<SettingsModel>({
+    useMockData: useMockData,
+    theme: "light",
+    unit: "metric",
+  });
+
+  const setInitialSettings = useCallback(() => {
+    const existingSettings = localStorage.getItem("settings");
+    if (existingSettings) {
+      setSettings(JSON.parse(existingSettings));
+    } else {
+      setSettings({ useMockData: useMockData, theme: "light", unit: "metric" });
+      localStorage.setItem("settings", JSON.stringify(settings));
+    }
+  }, [settings, useMockData]);
 
   useEffect(() => {
-    const existingTheme = localStorage.getItem("theme");
-    if (
-      existingTheme &&
-      (existingTheme === "light" || existingTheme === "dark")
-    ) {
-      setTheme(existingTheme);
-    } else {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-    }
-  }, [theme]);
+    setInitialSettings();
+  }, [setInitialSettings]);
 
-  const changeThemeHandler = (theme: ThemeType) => {
-    setTheme(theme);
-    localStorage.setItem("theme", theme);
+  const changeSettingsHandler = (object: object) => {
+    setSettings({ ...settings, ...object });
+    localStorage.setItem(
+      "settings",
+      JSON.stringify({ ...settings, ...object })
+    );
   };
 
   return (
-    <main className={theme}>
+    <main className={settings.theme}>
       <div className="main-container">
-        <Container theme={theme} changeTheme={changeThemeHandler}></Container>
+        <Container
+          settings={settings}
+          changeSettings={changeSettingsHandler}
+        ></Container>
       </div>
     </main>
   );
