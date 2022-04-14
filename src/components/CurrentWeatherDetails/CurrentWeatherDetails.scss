@@ -39,6 +39,7 @@
   border-radius: 15px;
   display: flex;
   align-items: center;
+  transition: background-color 0.25s ease;
   .current-weather-details-grid {
     flex: 1;
     display: grid;

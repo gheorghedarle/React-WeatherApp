@@ -30,6 +30,7 @@
     background-color: get-color("background-card");
     box-shadow: 0px 5px 10px 0px get-color("color-shadow");
   }
+  transition: background-color 0.25s ease;
   font-family: "Barlow", sans-serif;
   font-size: $body2-font-size;
   text-align: center;

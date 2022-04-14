@@ -12,24 +12,27 @@
     width: 40px;
   }
   .day {
+    @include theme() {
+      color: get-color("text");
+    }
     flex: 1;
     margin-left: 15px;
     font-weight: 600;
+    cursor: inherit;
+  }
+  .description {
     @include theme() {
       color: get-color("text");
     }
-  }
-  .description {
     flex: 1;
     margin-right: 15px;
     text-align: right;
-    @include theme() {
-      color: get-color("text");
-    }
+    cursor: inherit;
   }
   .min-max {
     @include theme() {
       color: get-color("text-secondary");
     }
+    cursor: inherit;
   }
 }
