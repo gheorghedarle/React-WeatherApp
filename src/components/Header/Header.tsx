@@ -1,12 +1,7 @@
 import React from "react";
 import { faC, faF, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  CurrentWeatherModel,
-  SettingsModel,
-  ThemeType,
-  UnitType,
-} from "../../models";
+import { CurrentWeatherModel, ThemeType, UnitType } from "../../models";
 import "./Header.scss";
 
 type HeaderProps = {
@@ -15,7 +10,8 @@ type HeaderProps = {
   data: CurrentWeatherModel;
   unit: string;
   theme: string;
-  changeSettings: (settings: object) => void;
+  changeUnit: (unit: UnitType) => void;
+  changeTheme: (theme: ThemeType) => void;
   changeLocation: (location: string) => void;
 };
 
@@ -25,7 +21,8 @@ export const Header = ({
   data,
   unit,
   theme,
-  changeSettings,
+  changeUnit,
+  changeTheme,
   changeLocation,
 }: HeaderProps) => {
   const getFormatedDate = () => {
@@ -58,7 +55,7 @@ export const Header = ({
           <span
             className={unit === "metric" ? "active" : ""}
             onClick={() => {
-              changeSettings({ unit: "metric" });
+              changeUnit("metric");
             }}
           >
             Celsius
@@ -66,7 +63,7 @@ export const Header = ({
           <span
             className={unit !== "metric" ? "active" : ""}
             onClick={() => {
-              changeSettings({ unit: "imperial" });
+              changeUnit("imperial");
             }}
           >
             Fahreneit
@@ -75,8 +72,8 @@ export const Header = ({
         <div
           className="button-theme"
           onClick={() => {
-            if (theme === "dark") changeSettings({ theme: "light" });
-            else changeSettings({ theme: "dark" });
+            if (theme === "dark") changeTheme("light");
+            else changeTheme("dark");
           }}
         >
           <FontAwesomeIcon

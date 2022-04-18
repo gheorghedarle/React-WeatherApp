@@ -8,23 +8,27 @@ import Daily from "../Daily/Daily";
 import {
   CurrentWeatherModel,
   EmptyCurrentWeather,
-  SettingsModel,
+  ThemeType,
+  UnitType,
 } from "../../models";
 import { LoadingComponent } from "../Common";
 import "./Container.scss";
 
 type ContainerProps = {
-  settings: SettingsModel;
-  changeSettings: (object: object) => void;
+  theme: string;
+  changeTheme: (theme: ThemeType) => void;
 };
 
-export const Container = ({ settings, changeSettings }: ContainerProps) => {
+export const Container = ({ theme, changeTheme }: ContainerProps) => {
+  const useMockData: boolean = true;
+
+  const [unit, setUnit] = useState<UnitType>("metric");
   const [currentWeatherSelectedItem, setCurrentWeatherSelectedItem] =
     useState(EmptyCurrentWeather);
   const [currentLocationName, setCurrentLocationName] = useState<string>("");
 
   const { isLoading, location, currentWeather, hourlyWeather, dailyWeather } =
-    useWeather(currentLocationName, settings.unit, settings.useMockData);
+    useWeather(currentLocationName, unit, useMockData);
 
   useEffect(() => {
     setCurrentWeatherSelectedItem(currentWeather);
@@ -38,9 +42,13 @@ export const Container = ({ settings, changeSettings }: ContainerProps) => {
     setCurrentLocationName(location);
   };
 
+  const changeUnit = (unit: UnitType) => {
+    setUnit(unit);
+  };
+
   return (
     <>
-      {settings.useMockData ? (
+      {useMockData ? (
         <div className="info-popup">
           The application is running in demo mode. To run the application with
           real data please check the{" "}
@@ -59,30 +67,27 @@ export const Container = ({ settings, changeSettings }: ContainerProps) => {
               locality={location.locality}
               country={location.country}
               data={currentWeatherSelectedItem}
-              unit={settings.unit}
-              theme={settings.theme}
-              changeSettings={changeSettings}
+              unit={unit}
+              theme={theme}
+              changeUnit={changeUnit}
+              changeTheme={changeTheme}
               changeLocation={changeLocationHandler}
             ></Header>
             <CurrentWeather
-              theme={settings.theme}
-              unit={settings.unit}
+              theme={theme}
+              unit={unit}
               data={currentWeatherSelectedItem}
             ></CurrentWeather>
             <CurrentWeatherDetails
               data={currentWeatherSelectedItem.details}
             ></CurrentWeatherDetails>
             <Hourly
-              theme={settings.theme}
-              unit={settings.unit}
+              theme={theme}
+              unit={unit}
               data={hourlyWeather}
               clickHandler={hourlyItemClickHandler}
             ></Hourly>
-            <Daily
-              theme={settings.theme}
-              unit={settings.unit}
-              data={dailyWeather}
-            ></Daily>
+            <Daily theme={theme} unit={unit} data={dailyWeather}></Daily>
           </div>
         ) : (
           <div className="loading-container">

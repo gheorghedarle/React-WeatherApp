@@ -1,4 +1,4 @@
-export * from "./SettingsModel";
+export * from "./Settings";
 
 export * from "./LocationModel";
 export * from "./LocationPositionModel";
