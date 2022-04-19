@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
-import { CurrentWeatherModel, HourlyWeatherModel } from "../../models";
+import {
+  CurrentWeatherModel,
+  HourlyWeatherModel,
+  SettingsModel,
+} from "../../models";
 import HourlyItem from "../HourlyItem/HourlyItem";
 import "./Hourly.scss";
 
 type HourlyProps = {
-  theme: string;
-  unit: string;
+  settings: SettingsModel;
   data: HourlyWeatherModel;
   clickHandler: (h: CurrentWeatherModel) => void;
 };
 
-export const Hourly = ({ theme, unit, data, clickHandler }: HourlyProps) => {
+export const Hourly = ({ settings, data, clickHandler }: HourlyProps) => {
   const [activeIndex, setActiveIndex] = useState(
     data && data.hourly[0] ? data.hourly[0].dt : 0
   );
@@ -37,7 +40,7 @@ export const Hourly = ({ theme, unit, data, clickHandler }: HourlyProps) => {
                 }
                 onClick={() => onClickHandler(h)}
               >
-                <HourlyItem theme={theme} unit={unit} data={h}></HourlyItem>
+                <HourlyItem settings={settings} data={h}></HourlyItem>
               </div>
             ))}
           </ScrollContainer>

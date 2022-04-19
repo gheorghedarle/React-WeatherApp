@@ -1,18 +1,20 @@
 import React from "react";
+import { SettingsModel } from "../../models";
 import { DailyWeatherDetailsModel } from "../../models/DailyWeatherDetailsModel";
 import "./DailyItem.scss";
 
 type DailyItemProps = {
-  theme: string;
-  unit: string;
+  settings: SettingsModel;
   data: DailyWeatherDetailsModel;
   onClick: () => void;
 };
 
-export const DailyItem = ({ theme, unit, data, onClick }: DailyItemProps) => {
+export const DailyItem = ({ settings, data, onClick }: DailyItemProps) => {
   const weatherCode =
-    theme === "dark" ? `${data.weather.icon}_n` : `${data.weather.icon}`;
-  const unitSymbol = unit === "metric" ? "C" : "F";
+    settings.theme === "dark"
+      ? `${data.weather.icon}_n`
+      : `${data.weather.icon}`;
+  const unitSymbol = settings.unit === "metric" ? "C" : "F";
   return (
     <div className="daily-item" onClick={onClick}>
       <img

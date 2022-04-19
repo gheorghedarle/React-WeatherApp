@@ -1,21 +1,20 @@
 import React from "react";
-import { CurrentWeatherModel } from "../../models";
+import { CurrentWeatherModel, SettingsModel } from "../../models";
 import "./CurrentWeather.scss";
 
 type CurrentWeatherProps = {
-  theme: string;
-  unit: string;
+  settings: SettingsModel;
   data: CurrentWeatherModel;
 };
 
-export const CurrentWeather = ({ theme, unit, data }: CurrentWeatherProps) => {
+export const CurrentWeather = ({ settings, data }: CurrentWeatherProps) => {
   const weatherCode =
     data.weather.icon !== ""
-      ? theme === "dark"
+      ? settings.theme === "dark"
         ? `${data.weather.icon}_n`
         : `${data.weather.icon}`
       : "01d"; // replace with default image
-  const unitSymbol = unit === "metric" ? "C" : "F";
+  const unitSymbol = settings.unit === "metric" ? "C" : "F";
   return (
     <>
       <div className="current-weather">

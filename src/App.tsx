@@ -1,33 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "./components/Container/Container";
-import { ThemeType } from "./models";
+import { useSettings } from "./hooks/useSettings";
 import "./App.scss";
 
 export const App = () => {
-  const [theme, setTheme] = useState<string>("");
-
-  useEffect(() => {
-    const existingTheme = localStorage.getItem("theme");
-    if (
-      existingTheme &&
-      (existingTheme === "light" || existingTheme === "dark")
-    ) {
-      setTheme(existingTheme);
-    } else {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-    }
-  }, [theme]);
-
-  const changeThemeHandler = (theme: ThemeType) => {
-    setTheme(theme);
-    localStorage.setItem("theme", theme);
-  };
+  const { settings, changeSettings } = useSettings();
 
   return (
-    <main className={theme}>
+    <main className={settings.theme}>
       <div className="main-container">
-        <Container theme={theme} changeTheme={changeThemeHandler}></Container>
+        <Container
+          settings={settings}
+          changeSettings={changeSettings}
+        ></Container>
       </div>
     </main>
   );

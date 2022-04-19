@@ -1,18 +1,13 @@
 import React from "react";
-import { DailyWeatherDetailsModel } from "../../models";
+import { DailyWeatherDetailsModel, SettingsModel } from "../../models";
 import "./DailyItemDetails.scss";
 
 type DailyItemDetailsProps = {
-  theme: string;
-  unit: string;
+  settings: SettingsModel;
   data: DailyWeatherDetailsModel;
 };
 
-export const DailyItemDetails = ({
-  theme,
-  unit,
-  data,
-}: DailyItemDetailsProps) => {
+export const DailyItemDetails = ({ settings, data }: DailyItemDetailsProps) => {
   return (
     <>
       <div className="daily-item-details">

@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import DailyItem from "../DailyItem/DailyItem";
-import { DailyWeatherModel } from "../../models";
+import { DailyWeatherModel, SettingsModel } from "../../models";
 import "./Daily.scss";
 import { DailyItemDetails } from "../DailyItemDetails/DailyItemDetails";
 
 type DailyProps = {
-  theme: string;
-  unit: string;
+  settings: SettingsModel;
   data: DailyWeatherModel;
 };
 
-export const Daily = ({ theme, unit, data }: DailyProps) => {
+export const Daily = ({ settings, data }: DailyProps) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const clickHandler = (d: any) => {
@@ -28,8 +27,7 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
           {data.daily.map((d) => (
             <div key={d.dt}>
               <DailyItem
-                theme={theme}
-                unit={unit}
+                settings={settings}
                 data={d}
                 onClick={() => clickHandler(d)}
               ></DailyItem>
@@ -41,8 +39,7 @@ export const Daily = ({ theme, unit, data }: DailyProps) => {
                 }
               >
                 <DailyItemDetails
-                  theme={theme}
-                  unit={unit}
+                  settings={settings}
                   data={d}
                 ></DailyItemDetails>
               </div>
