@@ -1,9 +1,75 @@
 @import "../../styles/color-themes";
+@import "../../styles/media-queries";
+@import "../../styles/variables";
 @import "../../styles/font-size";
 
+@include mobile-small-portrait {
+  .location {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+}
+@include mobile-small-landscape {
+  .location {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .settings {
+    grid-column: 3 / span 2;
+  }
+  .search {
+    grid-column: 3 / span 2;
+  }
+}
+@include mobile-portrait {
+  .location {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+}
+@include mobile-landscape {
+  .location {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .settings {
+    grid-column: 3 / span 2;
+  }
+  .search {
+    grid-column: 3 / span 2;
+  }
+}
+@include tablet-portrait {
+  .location {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+}
+@include tablet-landscape {
+  .location {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .settings {
+    grid-column: 3 / span 2;
+  }
+  .search {
+    grid-column: 3 / span 2;
+  }
+}
+@include desktop {
+  .location {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .settings {
+    grid-column: 3 / span 2;
+  }
+  .search {
+    grid-column: 3 / span 2;
+  }
+}
 .location {
-  grid-column: span 3;
-  grid-row: span 2;
   display: flex;
   flex-direction: column;
   .city {
@@ -71,6 +137,9 @@
     font-size: $body2-font-size;
     font-family: "Barlow", sans-serif;
     width: 100%;
+    &:focus {
+      outline: none;
+    }
     @include theme() {
       color: get-color("text");
       border-bottom: 1px solid get-color("text");

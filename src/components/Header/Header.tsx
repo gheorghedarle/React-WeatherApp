@@ -54,7 +54,7 @@ export const Header = ({
               changeSettings({ unit: "metric" });
             }}
           >
-            Celsius
+            °C
           </span>
           <span
             className={settings.unit !== "metric" ? "active" : ""}
@@ -62,7 +62,7 @@ export const Header = ({
               changeSettings({ unit: "imperial" });
             }}
           >
-            Fahreneit
+            °F
           </span>
         </div>
         <div
