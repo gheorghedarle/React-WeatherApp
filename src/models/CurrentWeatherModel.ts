@@ -11,7 +11,7 @@ export interface CurrentWeatherModel {
 export const EmptyCurrentWeather: CurrentWeatherModel = {
   dt: 0,
   weather: EmptyWeather,
-  temp: NaN,
-  feels_like: NaN,
+  temp: 0,
+  feels_like: 0,
   details: undefined,
 };

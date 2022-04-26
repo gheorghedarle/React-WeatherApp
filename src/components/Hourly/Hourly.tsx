@@ -25,28 +25,26 @@ export const Hourly = ({ settings, data, clickHandler }: HourlyProps) => {
   };
 
   return (
-    <>
-      <div className="hourly">
-        <label className="title">Hourly</label>
-        <div className="hourly-items-container">
-          <ScrollContainer>
-            {data.hourly.map((h) => (
-              <div
-                key={h.dt}
-                className={
-                  activeIndex === h.dt
-                    ? "hourly-item-container active"
-                    : "hourly-item-container"
-                }
-                onClick={() => onClickHandler(h)}
-              >
-                <HourlyItem settings={settings} data={h}></HourlyItem>
-              </div>
-            ))}
-          </ScrollContainer>
-        </div>
+    <div className="hourly">
+      <label className="title">Hourly</label>
+      <div className="hourly-items-container">
+        <ScrollContainer>
+          {data.hourly.map((h) => (
+            <div
+              key={h.dt}
+              className={
+                activeIndex === h.dt
+                  ? "hourly-item-container active"
+                  : "hourly-item-container"
+              }
+              onClick={() => onClickHandler(h)}
+            >
+              <HourlyItem settings={settings} data={h}></HourlyItem>
+            </div>
+          ))}
+        </ScrollContainer>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useWeather } from "../../hooks";
-import Header from "../Header/Header";
-import CurrentWeather from "../CurrentWeather/CurrentWeather";
-import CurrentWeatherDetails from "../CurrentWeatherDetails/CurrentWeatherDetails";
-import Hourly from "../Hourly/Hourly";
-import Daily from "../Daily/Daily";
 import {
   CurrentWeatherModel,
   EmptyCurrentWeather,
   SettingsModel,
 } from "../../models";
-import { LoadingComponent } from "../Common";
+import { Loading } from "../Common";
+import MockData from "../Common/MockData/MockData";
+import CurrentWeather from "../CurrentWeather/CurrentWeather";
+import CurrentWeatherDetails from "../CurrentWeatherDetails/CurrentWeatherDetails";
+import Daily from "../Daily/Daily";
+import Header from "../Header/Header";
+import Hourly from "../Hourly/Hourly";
 import "./Container.scss";
 
 type ContainerProps = {
@@ -40,21 +41,9 @@ export const Container = ({ settings, changeSettings }: ContainerProps) => {
   };
 
   return (
-    <>
-      {useMockData ? (
-        <div className="info-popup">
-          The application is running in demo mode. To run the application with
-          real data please check the{" "}
-          <a href="https://github.com/gheorghedarle/React-WeatherApp">
-            documentation
-          </a>
-          .
-        </div>
-      ) : (
-        <></>
-      )}
+    <MockData useMockData={useMockData}>
       <div className="container">
-        {!isLoading ? (
+        <Loading isLoading={isLoading}>
           <div className="grid-container">
             <Header
               locality={location.locality}
@@ -78,12 +67,8 @@ export const Container = ({ settings, changeSettings }: ContainerProps) => {
             ></Hourly>
             <Daily settings={settings} data={dailyWeather}></Daily>
           </div>
-        ) : (
-          <div className="loading-container">
-            <LoadingComponent />
-          </div>
-        )}
+        </Loading>
       </div>
-    </>
+    </MockData>
   );
 };

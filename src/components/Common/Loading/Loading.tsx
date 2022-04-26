@@ -1,8 +1,15 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./Loading.scss";
 
-export const LoadingComponent = () => {
-  return <div className="loading">Loading...</div>;
+type LoadingProps = {
+  children: ReactElement;
+  isLoading: boolean;
 };
 
-export default LoadingComponent;
+export const Loading = ({ children, isLoading }: LoadingProps) => {
+  return (
+    <>{isLoading ? <div className="loading">Loading...</div> : children}</>
+  );
+};
+
+export default Loading;
