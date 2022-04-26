@@ -1,6 +1,7 @@
 @import "../../styles/color-themes";
 @import "../../styles/media-queries";
 @import "../../styles/font-size";
+@import "../../styles/variables";
 
 .hourly {
   @include mobile-small-portrait {
@@ -67,8 +68,7 @@
       width: 75px;
       margin: 15px 5px;
       border-radius: 15px;
-      transition: all 0.5s ease;
-      transform: 250ms;
+      transition: all $animation-time ease;
     }
   }
 }
