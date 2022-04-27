@@ -37,7 +37,7 @@ export const Daily = ({ settings, data }: DailyProps) => {
                   : "daily-item-header"
               }
             >
-              <DailyItemDetails settings={settings} data={d}></DailyItemDetails>
+              <DailyItemDetails data={d}></DailyItemDetails>
             </div>
           </div>
         ))}

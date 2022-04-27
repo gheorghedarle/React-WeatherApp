@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "./components/Container/Container";
-import { useSettings } from "./hooks/useSettings";
 import { ErrorBoundary } from "react-error-boundary";
 import { Error, ErrorHandler } from "./components/Common/Error/Error";
 import "./App.scss";
+import { useSettings } from "./hooks";
 
 export const App = () => {
   const { settings, changeSettings } = useSettings();

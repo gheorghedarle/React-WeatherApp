@@ -1,0 +1,45 @@
+@import "../../../styles/color-themes";
+@import "../../../styles/media-queries";
+@import "../../../styles/variables";
+@import "../../../styles/font-size";
+
+.info-popup {
+  @include mobile-small-portrait {
+    padding: $mobile-small-portrait-grid-gap;
+  }
+  @include mobile-small-landscape {
+    padding: $mobile-small-landscape-grid-gap;
+  }
+  @include mobile-portrait {
+    padding: $mobile-portrait-grid-gap;
+  }
+  @include mobile-landscape {
+    padding: $mobile-landscape-grid-gap;
+  }
+  @include tablet-portrait {
+    padding: $tablet-portrait-grid-gap;
+  }
+  @include tablet-landscape {
+    padding: $tablet-landscape-grid-gap;
+  }
+  @include desktop {
+    padding: $desktop-grid-gap;
+  }
+  @include theme() {
+    color: get-color("text");
+    background-color: get-color("background-card");
+    box-shadow: 0px 5px 10px 0px get-color("color-shadow");
+  }
+  transition: background-color 0.25s ease;
+  font-family: "Barlow", sans-serif;
+  font-size: $body2-font-size;
+  text-align: center;
+  a {
+    @include theme() {
+      color: get-color("text");
+    }
+    font-family: "Barlow", sans-serif;
+    font-size: $body2-font-size;
+    font-weight: 700;
+  }
+}

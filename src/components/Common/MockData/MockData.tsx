@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import "./MockData.scss";
 
 type MockDataProps = {
   children: ReactElement;
