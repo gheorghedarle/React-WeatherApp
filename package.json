@@ -1,6 +1,6 @@
 {
   "name": "react-weatherapp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://gheorghedarle.github.io/react-weather-app",
   "dependencies": {
@@ -19,6 +19,7 @@
     "node-sass": "^7.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-error-boundary": "^3.1.4",
     "react-indiana-drag-scroll": "^2.1.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.6.3",

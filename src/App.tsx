@@ -1,6 +1,8 @@
 import React from "react";
 import { Container } from "./components/Container/Container";
 import { useSettings } from "./hooks/useSettings";
+import { ErrorBoundary } from "react-error-boundary";
+import { Error, ErrorHandler } from "./components/Common/Error/Error";
 import "./App.scss";
 
 export const App = () => {
@@ -9,10 +11,12 @@ export const App = () => {
   return (
     <main className={settings.theme}>
       <div className="main-container">
-        <Container
-          settings={settings}
-          changeSettings={changeSettings}
-        ></Container>
+        <ErrorBoundary FallbackComponent={Error} onError={ErrorHandler}>
+          <Container
+            settings={settings}
+            changeSettings={changeSettings}
+          ></Container>
+        </ErrorBoundary>
       </div>
     </main>
   );

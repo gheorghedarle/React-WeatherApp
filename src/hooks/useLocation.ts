@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import { useErrorHandler } from "react-error-boundary";
 import { EmptyLocationModel, LocationModel } from "../models";
 
 export const useLocation = (locationName: string, useMockData: boolean) => {
@@ -7,6 +8,7 @@ export const useLocation = (locationName: string, useMockData: boolean) => {
   const geocodeBaseUrl = process.env.REACT_APP_GEOLOCATION_GEOCODE_BASEURL;
 
   const [location, setLocation] = useState<LocationModel>(EmptyLocationModel);
+  const handleError = useErrorHandler();
 
   const getLocationDetails = useCallback(
     (position: GeolocationPosition) => {
@@ -29,9 +31,12 @@ export const useLocation = (locationName: string, useMockData: boolean) => {
               country: formattedAddress[1].replace(/\s/g, ""),
             });
           }
+        })
+        .catch((error) => {
+          handleError(error);
         });
     },
-    [apiKey, geocodeBaseUrl, useMockData]
+    [apiKey, geocodeBaseUrl, handleError, useMockData]
   );
 
   const getCoordsByLocationName = useCallback(
@@ -56,9 +61,12 @@ export const useLocation = (locationName: string, useMockData: boolean) => {
               country: formattedAddress[1].replace(/\s/g, ""),
             });
           }
+        })
+        .catch((error) => {
+          handleError(error);
         });
     },
-    [apiKey, geocodeBaseUrl, useMockData]
+    [apiKey, geocodeBaseUrl, handleError, useMockData]
   );
 
   useEffect(() => {
