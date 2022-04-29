@@ -1,4 +1,4 @@
-<img src="https://github.com/gheorghedarle/React-WeatherApp/blob/main/screenshots/icon.png" width="96" />
+<img src="https://github.com/gheorghedarle/React-WeatherApp/blob/master/screenshots/icon.png" width="96" />
 
 # React Weather App
 
