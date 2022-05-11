@@ -12,12 +12,6 @@ If you like this repository you can support me on
 
 <a href="https://www.buymeacoffee.com/gheorghedarle" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy Me A Coffee" width="175"></a>
 
-## Screenshots
-
-#### Light mode
-
-#### Dark mode
-
 ## Libraries
 
 - [React](https://github.com/facebook/react)
