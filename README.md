@@ -42,4 +42,4 @@ Illustrations are from [Freepik](https://www.freepik.com/)
 
 ## Other versions
 
-[Xamarin](https://github.com/gheorghedarle/Xamarin-WeatherApp) - Weather App developed in **Xamarin**
+[Xamarin-WeatherApp](https://github.com/gheorghedarle/Xamarin-WeatherApp) - developed in **Xamarin**
