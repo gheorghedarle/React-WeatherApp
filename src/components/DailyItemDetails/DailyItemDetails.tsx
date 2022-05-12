@@ -12,7 +12,7 @@ export const DailyItemDetails = ({ data }: DailyItemDetailsProps) => {
       <div className="daily-details-grid">
         <div className="daily-details-grid-item">
           <label>Rain:</label>
-          <label>{data.rain}%</label>
+          <label>{data.rain.toFixed(2)}%</label>
         </div>
         <div className="daily-details-grid-item">
           <label>Pressure:</label>

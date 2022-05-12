@@ -2,7 +2,7 @@
   "name": "react-weatherapp",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://gheorghedarle.github.io/react-weather-app",
+  "homepage": "https://gheorghedarle.github.io/React-WeatherApp/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",

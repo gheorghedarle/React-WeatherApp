@@ -77,14 +77,17 @@ export const useLocation = (locationName: string, useMockData: boolean) => {
             getLocationDetails(pos);
           },
           () => {
-            console.log("Error - Location");
+            handleError({
+              message:
+                "Location - Please enable access location in the browser",
+            });
           }
         );
       }
     } else {
       getCoordsByLocationName(locationName);
     }
-  }, [getCoordsByLocationName, getLocationDetails, locationName]);
+  }, [getCoordsByLocationName, getLocationDetails, handleError, locationName]);
 
   return {
     location,

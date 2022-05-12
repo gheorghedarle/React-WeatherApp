@@ -12,7 +12,7 @@ export const CurrentWeatherDetails = ({ data }: CurrentWeatherProps) => {
       <div className="current-weather-details-grid">
         <div className="current-weather-details-grid-item">
           <label>Rain:</label>
-          <label>{data?.rain}%</label>
+          <label>{data?.rain.toFixed(2)}%</label>
         </div>
         <div className="current-weather-details-grid-item">
           <label>Pressure:</label>
