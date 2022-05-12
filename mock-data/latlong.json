@@ -1,0 +1,59 @@
+{
+    "results" : [
+       {
+          "address_components" : [
+             {
+                "long_name" : "Timișoara",
+                "short_name" : "Timișoara",
+                "types" : [ "locality", "political" ]
+             },
+             {
+                "long_name" : "Timisoara",
+                "short_name" : "Timisoara",
+                "types" : [ "administrative_area_level_2", "political" ]
+             },
+             {
+                "long_name" : "Timiș County",
+                "short_name" : "TM",
+                "types" : [ "administrative_area_level_1", "political" ]
+             },
+             {
+                "long_name" : "Romania",
+                "short_name" : "RO",
+                "types" : [ "country", "political" ]
+             }
+          ],
+          "formatted_address" : "Timișoara, Romania",
+          "geometry" : {
+             "bounds" : {
+                "northeast" : {
+                   "lat" : 45.798319,
+                   "lng" : 21.2978016
+                },
+                "southwest" : {
+                   "lat" : 45.6838101,
+                   "lng" : 21.135378
+                }
+             },
+             "location" : {
+                "lat" : 45.7488716,
+                "lng" : 21.2086793
+             },
+             "location_type" : "APPROXIMATE",
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 45.798319,
+                   "lng" : 21.2978016
+                },
+                "southwest" : {
+                   "lat" : 45.6838101,
+                   "lng" : 21.135378
+                }
+             }
+          },
+          "place_id" : "ChIJp7UPy31nRUcRSWeTc2Svf1M",
+          "types" : [ "locality", "political" ]
+       }
+    ],
+    "status" : "OK"
+ }
