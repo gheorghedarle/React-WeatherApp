@@ -44,6 +44,8 @@ The app is using **One Call API** from OpenWeather API. To start the project you
 
 The app is using **Geocoding** and **Reverse Geocoding** from Google Maps API. To start the project you need a **google account** and **Google Maps API Key**. You can get the key from [here](https://developers.google.com/maps/documentation/geocoding/overview).
 
+To use real data, change the flag **useMockData** to false from **Container.tsx**.
+
 ## Resources
 
 Illustrations are from [Freepik](https://www.freepik.com/)
