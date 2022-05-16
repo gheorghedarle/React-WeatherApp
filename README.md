@@ -14,11 +14,11 @@ If you like this repository you can support me on
 
 #### Light mode
 
-<img src="https://github.com/gheorghedarle/React-WeatherApp/blob/main/screenshots/light_mode.png?raw=true" Width="1620" />
+<img src="https://github.com/gheorghedarle/React-WeatherApp/blob/master/screenshots/light_mode.png?raw=true" Width="1620" />
 
 #### Dark mode
 
-<img src="https://github.com/gheorghedarle/React-WeatherApp/blob/main/screenshots/dark_mode.png?raw=true" Width="1620" />
+<img src="https://github.com/gheorghedarle/React-WeatherApp/blob/master/screenshots/dark_mode.png?raw=true" Width="1620" />
 
 ## Libraries
 
