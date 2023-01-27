@@ -2,7 +2,7 @@
 
 # React Weather App
 
-![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
+![MIT License](https://img.shields.io/github/license/gheorghedarle/React-WeatherApp)
 
 [**DEMO with mock data**](https://gheorghedarle.github.io/React-WeatherApp/)
 
