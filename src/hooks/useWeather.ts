@@ -42,9 +42,10 @@ export const useWeather = (
       axios
         .get(url)
         .then((response) => {
-          setCurrent(response.data.current);
-          setHourly(response.data.hourly);
-          setDaily(response.data.daily);
+          const { current, hourly, daily, timezone_offset } = response.data;
+          setCurrent(current, timezone_offset);
+          setHourly(hourly, timezone_offset);
+          setDaily(daily);
         })
         .catch((error) => {
           handleError(error);
@@ -55,7 +56,7 @@ export const useWeather = (
     }
   }, [location, unit, useMockData, baseUrl, apiKey, handleError]);
 
-  const setCurrent = (data: any) => {
+  const setCurrent = (data: any, offset: number) => {
     setCurrentWeather({
       dt: data.dt,
       weather: {
@@ -64,6 +65,7 @@ export const useWeather = (
       },
       temp: data.temp,
       feels_like: data.feels_like,
+      timezone_offset: offset,
       details: {
         rain: 0,
         visibility: data.visibility / 1000,
@@ -74,7 +76,7 @@ export const useWeather = (
     });
   };
 
-  const setHourly = (data: any) => {
+  const setHourly = (data: any, offset: number) => {
     let hourly: CurrentWeatherModel[] = [];
     data.slice(0, 24).forEach((item: any) => {
       hourly.push({
@@ -85,6 +87,7 @@ export const useWeather = (
         },
         temp: item.temp,
         feels_like: item.feels_like,
+        timezone_offset: offset,
         details: {
           rain: item.pop * 100,
           visibility: item.visibility / 1000,

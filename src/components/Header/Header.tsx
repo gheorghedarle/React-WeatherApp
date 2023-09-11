@@ -2,6 +2,7 @@ import React from "react";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CurrentWeatherModel, SettingsModel } from "../../models";
+import moment from "moment";
 import "./Header.scss";
 
 type HeaderProps = {
@@ -22,21 +23,10 @@ export const Header = ({
   changeLocation,
 }: HeaderProps) => {
   const getFormatedDate = () => {
-    const selectedDate = new Date(data.dt * 1000);
-    var date = selectedDate.toLocaleString("en-GB", {
-      day: "numeric",
-      weekday: "long",
-      month: "long",
-    });
-    var year = selectedDate.toLocaleString("en-GB", {
-      year: "numeric",
-    });
-    var hour = selectedDate.toLocaleString("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    });
-    return `${date} ${year} ${hour}`;
+    const timezoneOffset = data?.timezone_offset;
+    const currTime = moment.unix(data.dt).utcOffset(timezoneOffset / 60);
+    const formattedDate = currTime.format("dddd, D MMMM YYYY HH:mm");
+    return formattedDate;
   };
 
   return (
